@@ -43,6 +43,7 @@ const Hero = () => {
             alt="header cake background"
             width={492}
             height={564}
+            loading="lazy"
           />
 
           <div className="w-[110%] md:w-[90%] absolute top-[10%] right-[10%] md:right-[3%] md:top-[15%] z-10">
@@ -52,6 +53,7 @@ const Hero = () => {
               className=" object-cover"
               width={585}
               height={442}
+              loading="lazy"
             />
           </div>
           <div className="w-[110%] md:w-[90%] absolute top-[10%] right-[10%] md:right-[3%] md:top-[15%]">
@@ -61,6 +63,7 @@ const Hero = () => {
               className=" object-cover"
               width={585}
               height={442}
+              loading="lazy"
             />
           </div>
           <div className="absolute -top-[5%] right-[60%] w-[20%]">
@@ -69,6 +72,7 @@ const Hero = () => {
               alt="brown cake sliced"
               width={97.613}
               height={94.266}
+              loading="lazy"
             />
           </div>
           <div className="absolute -bottom-[2%] right-[85%] w-[20%] ">
@@ -77,6 +81,7 @@ const Hero = () => {
               alt="yellow cake sliced"
               width={97.613}
               height={94.266}
+              loading="lazy"
             />
           </div>
           <div className="absolute bottom-[12%] right-[8%] z-10 w-[20%]">
@@ -85,6 +90,7 @@ const Hero = () => {
               alt="bowl of chaocolate"
               width={97.613}
               height={94.266}
+              loading="lazy"
             />
           </div>
         </div>

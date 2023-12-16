@@ -62,7 +62,7 @@ const Footer = () => {
       <div className="w-full">
         <hr className="h-[2px] w-full bg-[#F0F0F0]" />
         <div className="w-full flex flex-row justify-between items-center py-3 px-4 md:flex-col max-w-[1400px] mx-auto">
-          <h3>Copyright © 2032 all rights reserved</h3>
+          <h3>Copyright © 2023 all rights reserved</h3>
           <Link href="https://github.com/nbn2000" className="underline ">
             Designed by <strong>Makhmudov Nodirbek</strong>
           </Link>

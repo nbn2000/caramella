@@ -8,3 +8,4 @@ export { default as SmallUnderline } from "@/svg/SmallUnderline";
 export { default as BirthdayCake } from "@/svg/BirthdayCake";
 export { default as Bread } from "@/svg/Bread";
 export { default as Cookies } from "@/svg/Cookies";
+export { default as Badge } from "@/svg/Badge";

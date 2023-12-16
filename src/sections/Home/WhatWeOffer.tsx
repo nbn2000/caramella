@@ -13,10 +13,17 @@ const WhatWeOffer = () => {
           Offer <SmallUnderline className="absolute -bottom-2 left-0 w-full" />
         </span>
       </h2>
-      <div className="flex flex-row justify-between items-center flex-wrap gap-4 l:justify-center">
+      <div className="flex flex-row justify-between items-start gap-4 1xl:justify-center 1xl:flex-wrap">
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
           <figure>
-            <Image src={BirthdayCake} alt="birthday cake" width={384} />
+            <Image
+              src={BirthdayCake}
+              alt="birthday cake"
+              width={384}
+              height={254}
+              className="w-[384px] h-[254px]"
+              loading="lazy"
+            />
           </figure>
           <div className="card-body">
             <h2 className="card-title text-black h-175063">Birthday Cakes</h2>
@@ -31,7 +38,14 @@ const WhatWeOffer = () => {
         </div>
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
           <figure>
-            <Image src={cookies} alt="cookies" width={384} />
+            <Image
+              src={cookies}
+              alt="cookies"
+              width={384}
+              height={254}
+              className="w-[384px] h-[254px]"
+              loading="lazy"
+            />
           </figure>
           <div className="card-body">
             <h2 className="card-title text-black h-175063">
@@ -48,7 +62,14 @@ const WhatWeOffer = () => {
         </div>
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
           <figure>
-            <Image src={biscuits} alt="biscuits for cake" width={384} />
+            <Image
+              src={biscuits}
+              alt="biscuits for cake"
+              width={384}
+              height={254}
+              className="w-[384px] h-[254px]"
+              loading="lazy"
+            />
           </figure>
           <div className="card-body">
             <h2 className="card-title text-black h-175063">

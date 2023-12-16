@@ -16,11 +16,13 @@ const Header = () => {
               alt="cupcake background"
               width={160}
               height={191}
+              loading="lazy"
             />
             <Image
               src={cupcake}
               alt="cupcake"
               className="absolute bottom-0 right-5"
+              loading="lazy"
             />
           </div>
           <div className="max-w-[14.1875rem]">
