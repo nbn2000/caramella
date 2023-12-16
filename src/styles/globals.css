@@ -32,6 +32,10 @@ body {
   background-color: #fff;
 }
 
+img {
+  max-width: 100%;
+}
+
 button:active,
 a:active {
   scale: 0.98;
@@ -62,7 +66,7 @@ svg:hover {
 /* TEXT GLOBAL STYLES */
 
 .h-42915 {
-  font-family: "Playfair Display", sans-serif;
+  font-family: "Playfair Display", serif;
   font-size: 4.2915rem;
   font-style: normal;
   font-weight: 700;
@@ -71,7 +75,7 @@ svg:hover {
 }
 
 .h-237575 {
-  font-family: "Playfair Display", sans-serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.37575rem;
   font-style: normal;
   font-weight: 700;
@@ -79,7 +83,7 @@ svg:hover {
 }
 
 .h-175063 {
-  font-family: "Playfair Display", sans-serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.75063rem;
   font-style: normal;
   font-weight: 700;
@@ -126,11 +130,31 @@ svg:hover {
   line-height: 1.32288rem;
 }
 
-/* CONTAINER GLOBAL STYLES */
+/* BUTTONS STYLES */
 
-.border-button {
+.btn-contained {
+  width: 179px;
+  height: 59px;
+  border-radius: 10px;
+  background-color: var(--color-orange);
+  flex-shrink: 0;
+  @apply flex justify-center items-center;
+}
+
+.btn-outlined {
+  width: 179px;
+  height: 59px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid #232;
+  @apply flex justify-center items-center;
+}
+
+.btn-border {
   border: 2px solid var(--color-text-232);
 }
+
+/* CONTAINER GLOBAL STYLES */
 
 .container-p {
   padding-left: 6.71875%;

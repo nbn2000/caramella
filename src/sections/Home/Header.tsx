@@ -1,9 +1,11 @@
-import React from 'react'
+import Hero from "./Hero";
 
 const Header = () => {
-    return (
-        <div className='h-[500px]'>Header</div>
-    )
-}
+  return (
+    <header>
+      <Hero />
+    </header>
+  );
+};
 
-export default Header
+export default Header;
