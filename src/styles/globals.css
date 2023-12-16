@@ -34,6 +34,7 @@ body {
 
 img {
   max-width: 100%;
+  object-fit: cover;
 }
 
 button:active,
@@ -44,6 +45,10 @@ a:active {
 a:hover,
 svg:hover {
   cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
 }
 
 ::-webkit-scrollbar {
@@ -157,8 +162,8 @@ svg:hover {
 /* CONTAINER GLOBAL STYLES */
 
 .container-p {
-  padding-left: 6.71875%;
-  padding-right: 6.71875%;
+  padding-left: 5%;
+  padding-right: 5%;
   margin: 0 auto;
   width: 100%;
   max-width: 1400px;

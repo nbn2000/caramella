@@ -4,3 +4,7 @@ export { default as Menu } from "@/svg/Menu";
 export { default as Instagram } from "@/svg/Instagram";
 export { default as Telegram } from "@/svg/Telegram";
 export { default as Underline } from "@/svg/Underline";
+export { default as SmallUnderline } from "@/svg/SmallUnderline";
+export { default as BirthdayCake } from "@/svg/BirthdayCake";
+export { default as Bread } from "@/svg/Bread";
+export { default as Cookies } from "@/svg/Cookies";

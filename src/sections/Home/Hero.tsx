@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className="px-16 py-8 flex flex-row justify-between items-center 1xl:flex-col  1xl:justify-center 1xl:gap-8">
+    <div className="flex flex-row justify-between items-center 1xl:flex-col  1xl:justify-center 1xl:gap-8">
       <div className="flex flex-col gap-[2.81rem] z-30 md:justify-center md:items-center ">
         <div className="max-w-[42.042rem] flex flex-col gap-[1.48rem] md:text-center">
           <h1 className="h-42915 text-text232 md:text-[3rem]">

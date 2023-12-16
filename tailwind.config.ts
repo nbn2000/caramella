@@ -30,6 +30,7 @@ const config: Config = {
         "2xl": { max: "1400px" },
         "1xl": { max: "1150px" },
         xl: { max: "1024px" },
+        l: { max: "900px" },
         lg: { max: "768px" },
         md: { max: "640px" },
         sm: { max: "320px" },

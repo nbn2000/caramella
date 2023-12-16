@@ -1,10 +1,14 @@
-import Header from "../Header"
+import Header from "../Header";
+import NewProducts from "../NewProducts";
+import WhatWeOffer from "../WhatWeOffer";
 const Home = () => {
-    return (
-        <div>
-            <Header />
-        </div>
-    )
-}
+  return (
+    <div>
+      <Header />
+      <WhatWeOffer />
+      <NewProducts />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
