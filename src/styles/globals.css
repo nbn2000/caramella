@@ -179,6 +179,112 @@ button:hover {
   width: calc(100% - 16rem);
 }
 
+/* Animation */
+
+.wedding-cake {
+  animation: weddingcake 1s ease-in-out;
+}
+
+@keyframes weddingcake {
+  from {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: -5;
+  }
+  to {
+    right: 25%;
+    bottom: 0%;
+  }
+}
+
+.cupcake {
+  animation: cupcake 1.4s ease-in-out;
+}
+
+@keyframes cupcake {
+  from {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: -5;
+  }
+  to {
+    left: 15%;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.custom-cake {
+  animation: customcake 1.5s ease-in-out;
+}
+
+@keyframes customcake {
+  from {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: -5;
+  }
+  to {
+    left: 25%;
+    bottom: 0%;
+  }
+}
+
+.macarons {
+  animation: macarons 1.1s ease-in-out;
+}
+
+@keyframes macarons {
+  from {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: -5;
+  }
+  to {
+    right: 15%;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.birthday-cake {
+  animation: birthdaycake 1.3s ease-in-out;
+}
+
+@keyframes birthdaycake {
+  from {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: -5;
+  }
+  to {
+    left: 25%;
+    top: 0%;
+  }
+}
+
+.biscuit {
+  animation: biscuit 1.2s ease-in-out;
+}
+
+@keyframes biscuit {
+  from {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: -5;
+  }
+  to {
+    right: 25%;
+    bottom: 0%;
+  }
+}
+
 /* MEDIA QUERIES */
 
 @media (max-width: 320px) {
@@ -211,6 +317,86 @@ button:hover {
   .container-p {
     padding-left: 4%;
     padding-right: 4%;
+  }
+
+  @keyframes weddingcake {
+    from {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      z-index: -5;
+    }
+    to {
+      right: 15%;
+      bottom: 0%;
+    }
+  }
+
+  @keyframes cupcake {
+    from {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      z-index: -5;
+    }
+    to {
+      left: 5%;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+
+  @keyframes customcake {
+    from {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      z-index: -5;
+    }
+    to {
+      left: 15%;
+      bottom: 0%;
+    }
+  }
+
+  @keyframes macarons {
+    from {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      z-index: -5;
+    }
+    to {
+      right: 5%;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+
+  @keyframes birthdaycake {
+    from {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      z-index: -5;
+    }
+    to {
+      left: 15%;
+      top: 0%;
+    }
+  }
+
+  @keyframes biscuit {
+    from {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      z-index: -5;
+    }
+    to {
+      right: 15%;
+      bottom: 0%;
+    }
   }
 }
 
