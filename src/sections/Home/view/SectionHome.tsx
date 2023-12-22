@@ -2,6 +2,7 @@ import Header from "../Header";
 import NewProducts from "../NewProducts";
 import WhatWeOffer from "../WhatWeOffer";
 import Gallery from "../Gallery";
+import ConnectUs from "../ConnectUs";
 const Home = () => {
   return (
     <div>
@@ -9,6 +10,7 @@ const Home = () => {
       <WhatWeOffer />
       <NewProducts />
       <Gallery />
+      <ConnectUs />
     </div>
   );
 };
