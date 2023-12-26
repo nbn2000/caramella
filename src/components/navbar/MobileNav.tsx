@@ -13,7 +13,7 @@ const MobileNav = () => {
               <Menu color="#f2360a" size={20} />
             </label>
           </div>
-          <div className="drawer-side">
+          <div className="drawer-side z-50">
             <label
               htmlFor="my-drawer"
               aria-label="close sidebar"

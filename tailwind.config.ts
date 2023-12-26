@@ -8,6 +8,7 @@ const config: Config = {
     "./src/sections/*/*.{js,ts,jsx,tsx,mdx}",
     "./src/svg/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/flowbite/**/*.js",
+    "./src/sections/AboutUs/Header/*.{js,ts,jsx,tsx,mdx}", //I have tried to use several media query but only one wroked with 2 hours research the conclusion is this
   ],
   theme: {
     extend: {

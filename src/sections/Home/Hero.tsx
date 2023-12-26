@@ -1,4 +1,4 @@
-import Underline from "@/svg/Underline";
+import { Underline } from "@/svg/view";
 import headerBackground from "@/assets/header/header-cake-background.png";
 import headerCake from "@/assets/header/header-cake.png";
 import headerCakeBlur from "@/assets/header/header-cake-blur.png";

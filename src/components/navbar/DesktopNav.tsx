@@ -4,7 +4,7 @@ import React from "react";
 
 const DesktopNav = () => {
   return (
-    <nav className="h-[150px] flex flex-row justify-between items-center container-p lg:hidden">
+    <nav className="h-[130px] flex flex-row justify-between items-center container-p lg:hidden">
       <div>
         <Link href="/">
           <Logo />

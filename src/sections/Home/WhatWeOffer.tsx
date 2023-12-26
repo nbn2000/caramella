@@ -3,6 +3,7 @@ import Image from "next/image";
 import BirthdayCake from "@/assets/what-we-offer/birthday-cake.jpg";
 import biscuits from "@/assets/what-we-offer/biscuits.jpg";
 import cookies from "@/assets/what-we-offer/cookies.jpg";
+import styles from "@/styles/cards.module.css";
 
 const WhatWeOffer = () => {
   return (
@@ -13,8 +14,8 @@ const WhatWeOffer = () => {
           Offer <SmallUnderline className="absolute -bottom-2 left-0 w-full" />
         </span>
       </h2>
-      <div className="flex flex-row justify-between items-start gap-4 1xl:justify-center 1xl:flex-wrap">
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+      <div className={styles.body}>
+        <div className="card card-compact w-[22rem] h-[22rem] bg-base-100 shadow-xl hover:scale-[0.99] hover:transition-all">
           <figure>
             <Image
               src={BirthdayCake}
@@ -36,7 +37,7 @@ const WhatWeOffer = () => {
             </div>
           </div>
         </div>
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card card-compact w-[22rem] h-[22rem] bg-base-100 shadow-xl hover:scale-[0.99] hover:transition-all">
           <figure>
             <Image
               src={cookies}
@@ -60,7 +61,7 @@ const WhatWeOffer = () => {
             </div>
           </div>
         </div>
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card card-compact w-[22rem] h-[22rem] bg-base-100 shadow-xl hover:scale-[0.99] hover:transition-all">
           <figure>
             <Image
               src={biscuits}
