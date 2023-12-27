@@ -13,10 +13,10 @@ const Cards = ({ length }: any) => {
   );
   return (
     <div className={styles.body}>
-      {repeatedArray.map((i) => (
+      {repeatedArray.map((i, idx) => (
         <Link
           href="/"
-          key={i.id}
+          key={idx}
           className="card card-compact w-[22rem] h-[22rem]  bg-base-100 shadow-xl hover:scale-[0.99] hover:transition-all"
         >
           <figure>

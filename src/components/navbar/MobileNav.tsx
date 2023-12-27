@@ -1,7 +1,13 @@
 import { Logo, Profile, Menu } from "@/svg/view";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const MobileNav = () => {
+  const router = useRouter();
+
+  const handlNavigate = (link: string) => {
+    router.push(link);
+  };
   return (
     <nav className="lg:flex hidden h-[90px] flex-row items-center justify-between container-p">
       <div>
@@ -19,23 +25,58 @@ const MobileNav = () => {
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <ul className="menu p-4 w-[250px] h-full bg-base-200 text-base-content">
+            <ul className="menu flex flex-col gap-4  p-4 w-[250px] h-full bg-base-200 text-base-content">
+              <li>
+                <div>My Profile</div>
+              </li>
               <li className="active:bg-transparent">
                 <label
                   htmlFor="my-drawer"
                   aria-label="close sidebar"
-                  className="drawer-overlay"
+                  className="drawer-overlay w-full l-1125 text-text232"
+                  onClick={() => handlNavigate("/about")}
                 >
-                  <a>Sidebar Item 1</a>
+                  About
                 </label>
               </li>
-              <li>
+              <li className="active:bg-transparent">
                 <label
                   htmlFor="my-drawer"
                   aria-label="close sidebar"
-                  className="drawer-overlay"
+                  className="drawer-overlay w-full l-1125 text-text232"
+                  onClick={() => handlNavigate("/menu")}
                 >
-                  <a>Sidebar Item 2</a>
+                  Menu
+                </label>
+              </li>
+              <li className="active:bg-transparent">
+                <label
+                  htmlFor="my-drawer"
+                  aria-label="close sidebar"
+                  className="drawer-overlay w-full l-1125 text-text232"
+                  onClick={() => handlNavigate("/career")}
+                >
+                  Careers
+                </label>
+              </li>
+              <li className="active:bg-transparent">
+                <label
+                  htmlFor="my-drawer"
+                  aria-label="close sidebar"
+                  className="drawer-overlay w-full l-1125 text-text232"
+                  onClick={() => handlNavigate("/order")}
+                >
+                  Oreder
+                </label>
+              </li>
+              <li className="active:bg-transparent">
+                <label
+                  htmlFor="my-drawer"
+                  aria-label="close sidebar"
+                  className="drawer-overlay w-full l-1125 text-text232"
+                  onClick={() => handlNavigate("/contact")}
+                >
+                  Contact
                 </label>
               </li>
             </ul>
