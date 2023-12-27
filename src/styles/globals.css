@@ -72,7 +72,7 @@ button:hover {
 
 .h-42915 {
   font-family: "Playfair Display", serif;
-  font-size: 4.2915rem;
+  font-size: 4rem;
   font-style: normal;
   font-weight: 700;
   line-height: 4.81931rem;
@@ -138,8 +138,8 @@ button:hover {
 /* BUTTONS STYLES */
 
 .btn-contained {
-  width: 179px;
-  height: 59px;
+  width: 150px;
+  height: 50px;
   border-radius: 10px;
   background-color: var(--color-orange);
   flex-shrink: 0;
@@ -147,8 +147,8 @@ button:hover {
 }
 
 .btn-outlined {
-  width: 179px;
-  height: 59px;
+  width: 150px;
+  height: 50px;
   flex-shrink: 0;
   border-radius: 10px;
   border: 2px solid #232;

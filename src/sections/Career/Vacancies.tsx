@@ -6,28 +6,28 @@ const Vacancies = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="cont-y container-p">
-      <h3 className="h-237575 text-text232 mb-10">
+      <h3 className="h-237575 text-text232 mb-10 ">
         Avialable{" "}
         <span className="h-237575 text-orange relative">
           Vacancies
           <SmallUnderline className="absolute -bottom-2 left-0 w-full" />
         </span>
       </h3>
-      <div className="flex flex-row justify-between items-start max-w-[95%]">
-        <div className="flex flex-col">
-          <button className="button-text border-b-2 border-solid border-[#848383] w-[18rem] py-4 px-2 text-left hover:bg-text233 hover:text-white">
+      <div className="flex flex-row justify-between gap-4 items-start max-w-[95%] xl:flex-col ">
+        <div className="flex flex-col w-[18rem] sm:w-full">
+          <button className="button-text border-b-2 border-solid border-[#848383] w-full py-4 px-2 text-left hover:bg-text233 hover:text-white">
             Operator
           </button>
-          <button className="button-text border-b-2 border-solid border-[#848383] w-[18rem] py-4 px-2 text-left hover:bg-text233 hover:text-white">
+          <button className="button-text border-b-2 border-solid border-[#848383] w-full py-4 px-2 text-left hover:bg-text233 hover:text-white">
             Cream Specialist
           </button>
-          <button className="button-text border-b-2 border-solid border-[#848383] w-[18rem] py-4 px-2 text-left hover:bg-text233 hover:text-white">
+          <button className="button-text border-b-2 border-solid border-[#848383] w-full py-4 px-2 text-left hover:bg-text233 hover:text-white">
             Biscuit Specialist
           </button>
-          <button className="button-text border-b-2 border-solid border-[#848383] w-[18rem] py-4 px-2 text-left hover:bg-text233 hover:text-white">
+          <button className="button-text border-b-2 border-solid border-[#848383] w-full py-4 px-2 text-left hover:bg-text233 hover:text-white">
             Head Chef
           </button>
-          <button className="button-text border-b-2 border-solid border-[#848383] w-[18rem] py-4 px-2 text-left hover:bg-text233 hover:text-white">
+          <button className="button-text border-b-2 border-solid border-[#848383] w-full py-4 px-2 text-left hover:bg-text233 hover:text-white">
             Sweets Maker
           </button>
         </div>

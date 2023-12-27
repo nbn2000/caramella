@@ -1,13 +1,13 @@
 import { Helmet } from "react-helmet-async";
-import SectionMenu from "@/sections/Menu/view/SectionMenu";
+import SectionContact from "@/sections/Contact/view/SectionContact";
 
 export default function AboutUs() {
   return (
     <>
       <Helmet>
-        <title>Menu</title>
+        <title>Contact</title>
       </Helmet>
-      <SectionMenu />
+      <SectionContact />
     </>
   );
 }

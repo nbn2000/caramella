@@ -1,5 +1,4 @@
-import Facebook from "@/svg/Facebook";
-import { Instagram, Logo, Telegram } from "@/svg/view";
+import { Instagram, Logo, Telegram, Facebook } from "@/svg/view";
 import Link from "next/link";
 
 const Footer = () => {

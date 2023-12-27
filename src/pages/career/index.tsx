@@ -5,7 +5,7 @@ export default function AboutUs() {
   return (
     <>
       <Helmet>
-        <title>About Us</title>
+        <title>Careers</title>
       </Helmet>
       <SectionCareer />
     </>

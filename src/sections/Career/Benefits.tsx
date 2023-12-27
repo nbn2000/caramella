@@ -8,8 +8,8 @@ import { SmallUnderline } from "@/svg/view";
 
 const Benefits = () => {
   return (
-    <div className="container-p cont-y flex flex-row justify-between items-start gap-6">
-      <div className="flex flex-col justify-start items-start gap-4 max-w-[27rem]">
+    <div className="container-p cont-y flex flex-row justify-between items-start gap-6 xl:flex-col ">
+      <div className="flex flex-col justify-start items-start gap-4 max-w-[27rem] 1xl:max-w-[23rem] xl:max-w-[27rem]">
         <h2 className="h-175063 text-orange">Benefits</h2>
         <h3 className="h-237575 text-text232">
           Why you Should Join Our{" "}

@@ -1,29 +1,14 @@
-import Image from "next/image";
-import Chef from "@/assets/connect-us/connect-photo.jpg";
-import { SmallUnderline } from "@/svg/view";
+import React from "react";
+import { SmallUnderline, Facebook, Instagram, Telegram } from "@/svg/view";
+import Link from "next/link";
 
-const ConnectUs = () => {
+const ContactAndForm = () => {
   return (
-    <div className="container-p cont-y">
-      <h2 className="h-237575 text-text232 text-center mb-10">
-        <span className="h-237575 text-orange relative">
-          Connect
-          <SmallUnderline className="absolute -bottom-2 left-0 w-full" />
-        </span>{" "}
-        With Us
-      </h2>
-      <div className="flex flex-row justify-between items-center lg:flex-col lg:justify-center lg:gap-6">
-        <div className="w-[45%] lg:w-[90%] md:w-[100%]">
-          <Image
-            src={Chef}
-            alt="chef"
-            width={300}
-            height={300}
-            className="w-[100%] h-[100%]"
-            loading="lazy"
-          />
-        </div>
-        <form className="w-[40%] mx-auto lg:w-[80%] md:w-[100%]">
+    <div className="cont-y container-p flex flex-row justify-between items-start gap-6 lg:flex-col lg:items-center">
+      <div>
+        <h3 className="h-237575 text-text232">Do you have questions ?</h3>
+        <h5 className="b-145475 text-gray-500 mb-7">Send Us Message</h5>
+        <form>
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="text"
@@ -78,12 +63,60 @@ const ConnectUs = () => {
             type="submit"
             className="button-text text-white btn-contained w-full"
           >
-            Submit
+            Send
           </button>
         </form>
+      </div>
+      <div className="flex flex-col justify-start items-start gap-[3rem]">
+        <h3 className="h-237575 text-orange relative">
+          Caramella
+          <SmallUnderline className="absolute -bottom-2 left-0 w-full" />
+        </h3>
+        <div className="flex flex-col justify-start items-start gap-[2rem]">
+          <div>
+            <h5 className="b-145475  text-text233">Our Address:</h5>
+            <p className="b-0875 text-gray-500">
+              Uzbekistan &#10093; Namangan &#10093; Boburshox street &#10093;
+              Near to Bossmilk cafe
+            </p>
+          </div>
+          <hr className="w-full h-[2px] bg-gray-300" />
+          <div>
+            <div className="flex flex-row gap-4 justify-start items-center">
+              <h5 className="text-lg text-text233">Phone Number:</h5>
+              <p className="b-0875 text-gray-500">+998 91 352 44 74</p>
+            </div>
+            <div className="flex flex-row gap-4 justify-start items-center">
+              <h5 className="text-lg text-text233">Phone Number:</h5>
+              <p className="b-0875 text-gray-500">+998 33 052 44 74</p>
+            </div>
+            <div className="flex flex-row gap-4 justify-start items-center">
+              <h5 className="text-lg text-text233">Email:</h5>
+              <p className="b-0875 text-gray-500">caramella@gmail.com</p>
+            </div>
+            <div className="flex flex-row gap-4 justify-start items-center">
+              <h5 className="text-lg text-text233">Working Hours:</h5>
+              <p className="b-0875 text-gray-500">
+                <strong>Mon-Sun:</strong> 9:00-18:00
+              </p>
+            </div>
+          </div>
+          <hr className="w-full h-[2px] bg-gray-300" />
+          <div className="flex flex-row justify-center items-center gap-12 w-full bg-orange p-4 rounded-lg">
+            <Link href="/">
+              <Instagram />
+            </Link>
+            <Link href="/">
+              <Telegram />
+            </Link>
+            <Link href="/">
+              <Facebook />
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default ConnectUs;
+export default ContactAndForm;
