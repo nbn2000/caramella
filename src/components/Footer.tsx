@@ -28,7 +28,7 @@ const Footer = () => {
             </Link>
           </div>
           <div className="flex flex-col justify-start items-start gap-4 pt-10 px-6 md:pt-0">
-            <Link href="/careers" className="l-1125 !font-bold">
+            <Link href="/career" className="l-1125 !font-bold">
               Careers
             </Link>
             <Link href="/order" className="l-1125 !font-bold">
