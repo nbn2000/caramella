@@ -20,7 +20,7 @@ const DesktopNav = () => {
         <Link href="/menu" className="l-1125 text-text232 hover:font-bold">
           Menu
         </Link>
-        <Link href="/careers" className="l-1125 text-text232 hover:font-bold">
+        <Link href="/career" className="l-1125 text-text232 hover:font-bold">
           Careers
         </Link>
         <Link href="/order" className="l-1125 text-text232 hover:font-bold">

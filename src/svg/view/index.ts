@@ -9,3 +9,5 @@ export { default as BirthdayCake } from "@/svg/BirthdayCake";
 export { default as Bread } from "@/svg/Bread";
 export { default as Cookies } from "@/svg/Cookies";
 export { default as Badge } from "@/svg/Badge";
+export { default as Dot } from "@/svg/Dot";
+export { default as Cancel } from "@/svg/Cancel";
