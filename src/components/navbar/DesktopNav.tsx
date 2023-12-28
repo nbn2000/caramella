@@ -1,8 +1,10 @@
 import { Logo, Profile } from "@/svg/view";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import LoginModal from "../loginModal";
 
 const DesktopNav = () => {
+  const [open, setOpen] = useState(false);
   return (
     <nav className="h-[130px] flex flex-row justify-between items-center container-p lg:hidden">
       <div>
@@ -30,10 +32,14 @@ const DesktopNav = () => {
           Contact
         </Link>
       </div>
-      <button className="flex flex-row justify-center items-center gap-[0.31rem]">
+      <button
+        onClick={() => setOpen(true)}
+        className="flex flex-row justify-center items-center gap-[0.31rem]"
+      >
         <Profile color="#F2360A" />{" "}
         <span className="l-1125 text-text232">My Account</span>
       </button>
+      <LoginModal setOpen={setOpen} open={open} />
     </nav>
   );
 };
