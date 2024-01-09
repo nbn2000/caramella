@@ -98,9 +98,9 @@ const Form = () => {
         </label>
       </div>
       <div className="flex flex-row w-full justify-between items-center">
-        <div className="relative z-0 w-[50%] mb-5 group">
+        <div className="relative  w-[50%] mb-5 group">
           {openCloseDate && (
-            <div className="absolute bottom-0">
+            <div className="absolute bottom-0 z-30">
               <Calendar
                 date={new Date()}
                 onChange={(e: any) => handleSelectDate(e)}
