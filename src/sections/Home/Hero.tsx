@@ -44,6 +44,7 @@ const Hero = () => {
             width={492}
             height={564}
             loading="lazy"
+            quality={10}
           />
 
           <div className="w-[110%] md:w-[90%] absolute top-[10%] right-[10%] md:right-[3%] md:top-[15%] z-10">

@@ -6,6 +6,7 @@ import { uzCyrl } from "date-fns/locale";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import Select from "react-select";
+import Link from "next/link";
 
 const options = [
   { value: "09:00", label: "09:00" },
@@ -156,13 +157,14 @@ const Form = () => {
           Little bit about yourself
         </label>
       </div>
-
-      <button
-        type="submit"
-        className="button-text text-white btn-contained w-full"
-      >
-        Submit
-      </button>
+      <div className="flex flex-row justify-between gap-2 sm:flex-col sm:items-center">
+        <button type="submit" className="button-text text-white btn-contained">
+          Submit
+        </button>
+        <Link href="/" className="button-text btn-outlined">
+          Бош Сахифага
+        </Link>
+      </div>
     </form>
   );
 };

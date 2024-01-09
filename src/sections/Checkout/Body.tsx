@@ -9,11 +9,11 @@ const Body = () => {
     (_, index) => array[index % array.length]
   );
   return (
-    <div className="cont-y container-p flex flex-row justify-between items-start">
-      <div className="flex flex-col gap-4 w-[50%]">
+    <div className="cont-y container-p flex flex-row gap-6 xl:flex-col xl:justify-center xl:items-center justify-between items-start">
+      <div className="flex flex-col gap-4 w-[40%] md:!px-0 lg:!w-full lg:px-[10%] xl:w-[55%] ">
         <h3 className="h-237575 text-text232 md:text-[3rem]">Information</h3>
-        <div className="flex flex-col w-[500px] gap-2">
-          <span className="b-0875 text-gray-500">
+        <div className="flex flex-col max-w-[500px] gap-2">
+          <span className="b-0875 text-gray-500 ">
             Агар телеграмда рўйхатдан ўтган телефон рақамингиз қўнғироқлар учун
             мобил рақамингиз бўлмаса, илтимос рақамингизни Йозинг!{" "}
           </span>
@@ -25,8 +25,8 @@ const Body = () => {
         </div>
         <Form />
       </div>
-      <div className="flex flex-col gap-6">
-        <h3 className="h-237575 text-text232 md:text-[3rem]">Буюртмалар:</h3>
+      <div className="flex flex-col gap-6 w-[45%] lg:!w-[80%] xl:w-[65%]">
+        <h3 className="h-237575 text-text232 md:text-[2rem]">Буюртмалар:</h3>
         <div className="flex flex-col gap-4">
           {repeatedArray.map((i, idx) => (
             <div key={idx}>
@@ -39,9 +39,11 @@ const Body = () => {
             </div>
           ))}
         </div>
-        <h3 className="h-175063 text-text232 md:text-[3rem]">
+        <h3 className="h-175063 text-text232 md:text-[2rem] sm:!text-[1.5rem]">
           Хаммаси Бўлиб:{" "}
-          <span className="h-237575 text-orange md:text-[3rem]">$1000</span>
+          <span className="h-237575 text-orange md:text-[2.2rem] sm:!text-[1.7rem]">
+            $1000
+          </span>
         </h3>
       </div>
     </div>

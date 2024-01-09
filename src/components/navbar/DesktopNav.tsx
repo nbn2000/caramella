@@ -1,7 +1,9 @@
 import { Logo, Profile } from "@/svg/view";
 import Link from "next/link";
 import React, { useState } from "react";
-import LoginModal from "../loginModal";
+import dynamic from "next/dynamic";
+
+const LoginModal = dynamic(() => import("../loginModal"), { ssr: false });
 
 const DesktopNav = () => {
   const [open, setOpen] = useState(false);
