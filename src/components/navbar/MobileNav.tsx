@@ -1,9 +1,12 @@
 import { Logo, Profile, Menu } from "@/svg/view";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import LoginModal from "../loginModal";
 
 const MobileNav = () => {
   const router = useRouter();
+  const [open, setOpen] = useState(false);
 
   const handlNavigate = (link: string) => {
     router.push(link);
@@ -88,9 +91,10 @@ const MobileNav = () => {
           <Logo />
         </Link>
       </div>
-      <div>
+      <button onClick={() => setOpen(true)}>
         <Profile color="#F2360A" />
-      </div>
+      </button>
+      <LoginModal setOpen={setOpen} open={open} />
     </nav>
   );
 };

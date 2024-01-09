@@ -1,12 +1,12 @@
-import { Helmet } from "react-helmet-async";
 import SectionAboutUs from "@/sections/AboutUs/view/SectionAboutUs";
+import Head from "next/head";
 
 export default function AboutUs() {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>About Us</title>
-      </Helmet>
+      </Head>
       <SectionAboutUs />
     </>
   );

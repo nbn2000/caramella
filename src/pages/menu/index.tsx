@@ -1,12 +1,12 @@
-import { Helmet } from "react-helmet-async";
 import SectionMenu from "@/sections/Menu/view/SectionMenu";
+import Head from "next/head";
 
 export default function AboutUs() {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Menu</title>
-      </Helmet>
+      </Head>
       <SectionMenu />
     </>
   );

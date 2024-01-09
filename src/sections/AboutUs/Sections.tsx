@@ -55,6 +55,32 @@ const Sections = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
               molestiae nemo maxime doloremque laboriosam, dolores libero
               asperiores cum eos odio?
+              {/* Sobirova Nazokat 2002-yilda qandolatchilik sohasida o‘z yo‘lini
+              boshlagan bo‘lib, dastlab o‘z uyida turib mazali pishiriqlar
+              tayorlagan. Uning tashabbusi uning pishsirgan pisishiriqlari
+              yoqimli ta'miga maftun bo'lgan do'stlari va qarindosh a'zolaridan
+              buyurtmalar kelishi bilan boshlandi. Ijobiy og'zaki nutq tez
+              tarqaldi, bu uning shirin va ajoyib ijodiga bo'lgan talabning
+              ortishiga olib keldi. O‘tgan yillar davomida Sobirova 1000dan
+              ortiq o‘quvchilarga o‘z tajribasini berib, o‘zining ajoyib
+              mahorati uchun e’tirof va olqishlarga sazovor bo‘ldi. Ajoyib
+              sharaf sifatida uning mahalla komitet tomonidan uning sharafiga
+              mahallani nomini Shirinlik ko'chasi deb nomladi. Uning
+              qandolatchilikka bo‘lgan ishtiyoqi 2018-yilda sevimli mashg‘ulot
+              sifatida boshlangan, mamnun bo‘lgan mijozlarning katta yordami
+              tufayli gullab-yashnayotgan biznesga aylandi. Sobirova va uning
+              turmush o‘rtog‘i Mahmudov Bosit o‘sish imkoniyatlarini tushunib,
+              maxsus qandolatchilik fabrikasini tashkil etish to‘g‘risida
+              strategik qaror qabul qilishdi. Ukasi Ibrohim Sobirovning qimmatli
+              ko‘magida ular “Caramella” zavodini muvaffaqiyatli ishga
+              tushirishdi. Tashkil etilganidan beri Caramella Namangandagi eng
+              mashhur qandolatchilik fabrikalaridan biri sifatida mashhurlikka
+              erishdi. Bu muvaffaqiyat tarixi Shodiya, Mashxura, Mohidil,
+              Muborak, Naima kabi muhim shaxslarning fidoyiligi va mehnatisiz
+              amalga oshmasdi. Ularning o'zgarmas sadoqati Caramellani bugungi
+              kunda mashhur muassasaga aylantirishda muhim rol o'ynadi.
+              Minnatdorchilik belgisi sifatida biz ushbu mehnatsevar va fidoyi
+              insonlarga chin dildan minnatdorchilik bildiramiz. */}
               {readMore.first && (
                 <p
                   className={`b-125 max-w-[500px] text-[#848383] md:text-center transition-[opacity] duration-400 ease-in-out

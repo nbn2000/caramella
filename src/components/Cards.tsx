@@ -1,10 +1,8 @@
 import { Badge } from "@/svg/view";
 import Image from "next/image";
 import Link from "next/link";
-import AmericanHeritache from "@/assets/new-products/american-heritage-chocolate.jpg";
-import ChocolateCake from "@/assets/new-products/chocolate-cake.jpg";
-import CreamyCake from "@/assets/new-products/creamy-cake.jpg";
 import styles from "@/styles/cards.module.css";
+import { array } from "@/mock";
 
 const Cards = ({ length }: any) => {
   const repeatedArray = Array.from(
@@ -15,13 +13,13 @@ const Cards = ({ length }: any) => {
     <div className={styles.body}>
       {repeatedArray.map((i, idx) => (
         <Link
-          href="/"
+          href={`/${i.category}/${i.id}`}
           key={idx}
           className="card card-compact w-[22rem] h-[22rem]  bg-base-100 shadow-xl hover:scale-[0.99] hover:transition-all"
         >
           <figure>
             <Image
-              src={i.img}
+              src={i.file}
               alt="Shoes"
               width={384}
               height={254}
@@ -55,34 +53,3 @@ const Cards = ({ length }: any) => {
 };
 
 export default Cards;
-
-const array = [
-  {
-    id: 112233,
-    name: "Chocolate Heritache",
-    badge: true,
-    describtion:
-      "Indulge in the rich legacy of American Heritage Chocolate, a sublime blend of tradition and taste.",
-    price: 120,
-    img: AmericanHeritache,
-  },
-
-  {
-    id: 221133,
-    name: "Chocolate Cake",
-    badge: false,
-    describtion:
-      "Indulge in the rich legacy of American Heritage Chocolate, a sublime blend of tradition and taste.",
-    price: 300,
-    img: ChocolateCake,
-  },
-  {
-    id: 113322,
-    name: "Creamy Cake",
-    badge: false,
-    describtion:
-      "Indulge in the rich legacy of American Heritage Chocolate, a sublime blend of tradition and taste.",
-    price: 599,
-    img: CreamyCake,
-  },
-];

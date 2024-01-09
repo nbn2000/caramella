@@ -1,12 +1,12 @@
-import { Helmet } from "react-helmet-async";
 import SectionCareer from "@/sections/Career/view/SectionCareer";
+import Head from "next/head";
 
 export default function AboutUs() {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Careers</title>
-      </Helmet>
+      </Head>
       <SectionCareer />
     </>
   );

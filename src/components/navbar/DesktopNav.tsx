@@ -13,23 +13,41 @@ const DesktopNav = () => {
         </Link>
       </div>
       <div className="flex flex-row justify-center items-center gap-[3.44rem] 1xl:gap-4 xl:gap-2">
-        <Link href="/" className="l-1125 text-text232 hover:font-bold">
-          Home
+        <Link
+          href="/"
+          className="l-1125 text-text232 hover:underline hover:decoration-[#f2360a] hover:decoration-4"
+        >
+          Бош Сахифа
         </Link>
-        <Link href="/about" className="l-1125 text-text232 hover:font-bold">
-          About
+        <Link
+          href="/about"
+          className="l-1125 text-text232 hover:underline hover:decoration-[#f2360a] hover:decoration-4"
+        >
+          Биз Хақимизда
         </Link>
-        <Link href="/menu" className="l-1125 text-text232 hover:font-bold">
-          Menu
+        <Link
+          href="/menu"
+          className="l-1125 text-text232 hover:underline hover:decoration-[#f2360a] hover:decoration-4"
+        >
+          Меню
         </Link>
-        <Link href="/career" className="l-1125 text-text232 hover:font-bold">
-          Careers
+        <Link
+          href="/career"
+          className="l-1125 text-text232 hover:underline hover:decoration-[#f2360a] hover:decoration-4"
+        >
+          Карьера
         </Link>
-        <Link href="/order" className="l-1125 text-text232 hover:font-bold">
-          Order
+        <Link
+          href="/cart"
+          className="l-1125 text-text232 hover:underline hover:decoration-[#f2360a] hover:decoration-4"
+        >
+          Саватча
         </Link>
-        <Link href="/contact" className="l-1125 text-text232 hover:font-bold">
-          Contact
+        <Link
+          href="/contact"
+          className="l-1125 text-text232 hover:underline hover:decoration-[#f2360a] hover:decoration-4"
+        >
+          Кантакт
         </Link>
       </div>
       <button
@@ -37,7 +55,7 @@ const DesktopNav = () => {
         className="flex flex-row justify-center items-center gap-[0.31rem]"
       >
         <Profile color="#F2360A" />{" "}
-        <span className="l-1125 text-text232">My Account</span>
+        <span className="l-1125 text-text232">Менинг Профелим</span>
       </button>
       <LoginModal setOpen={setOpen} open={open} />
     </nav>

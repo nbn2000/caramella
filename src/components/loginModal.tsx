@@ -1,56 +1,36 @@
-import { Cancel } from "@/svg/view";
-import { useEffect, useRef } from "react";
-import { Types } from "@nixjs23n6/types";
-
-declare global {
-  interface Window {
-    TelegramLoginWidgetCb: any;
-  }
-}
-
+import { Cancel, Logo } from "@/svg/view";
+import Link from "next/link";
+import PinInput from "react-pin-input";
+import axios from "axios";
+import { enqueueSnackbar } from "notistack";
 const LoginModal = ({ setOpen, open }: { setOpen: any; open: boolean }) => {
-  const telegramRef = useRef<Types.Nullable<HTMLButtonElement>>(null);
   const modalClass = open ? "fixed" : "hidden";
-  const handleSubmit = () => {
-    const timeout: any = setTimeout(() => {
+  const handleSubmit = async (value: any, index: any) => {
+    try {
+      const config = {
+        method: "POST",
+        url: "http://localhost:8080/api/signup",
+        headers: {
+          "Content-type": "application/json",
+        },
+        data: JSON.stringify({ passCode: value }),
+      };
+      const data = await axios(config);
+      const res = data.data;
+      const { status, message } = res;
+      enqueueSnackbar(message, { variant: status });
       setOpen(false);
-      clearTimeout(timeout);
-    }, 500);
-  };
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = `https://telegram.org/js/telegram-widget.js?22`;
-    script.async = true;
-    const attributes = {
-      "data-telegram-login": "register_caramella_bot",
-      "data-size": "large",
-      "data-request-access": "write",
-      "data-userpic": "true",
-      "data-onauth": "onTelegramAuth(user)",
-    };
-
-    for (const [k, v] of Object.entries(attributes)) {
-      v !== undefined && script.setAttribute(k, `${v}`);
+    } catch (err: any) {
+      const { status, message } = err?.response?.data;
+      enqueueSnackbar(message, { variant: status });
+      console.log(err);
     }
-
-    telegramRef.current!.appendChild(script);
-
-    return () => {
-      if (telegramRef.current) {
-        telegramRef.current.innerHTML = "";
-      }
-      if (window.TelegramLoginWidgetCb) {
-        delete window.TelegramLoginWidgetCb;
-      }
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  };
 
   return (
     <div
       id="modal"
-      className={`modal-box z-50 py-8 px-16 boxShadow bg-white rounded-xl top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ${modalClass}`}
+      className={`modal-box z-50 md:p-4 sm:p-4 py-8 px-16 boxShadow bg-white rounded-xl top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ${modalClass}`}
     >
       <button
         onClick={() => setOpen(false)}
@@ -58,7 +38,44 @@ const LoginModal = ({ setOpen, open }: { setOpen: any; open: boolean }) => {
       >
         <Cancel />
       </button>
-      <button ref={telegramRef}>telegramBot</button>
+      <div className="w-full flex flex-col justify-center items-center gap-6">
+        <Logo />
+        <div className="flex flex-col justify-center items-center text-center">
+          <h4 className="h-175063 text-orange whitespace-nowrap">
+            Kodni Kiriting
+          </h4>
+          <p className="b-0875">
+            <Link
+              href="https://t.me/register_caramella_bot"
+              className="text-orange b-0875"
+            >
+              @register_caramella_bot
+            </Link>{" "}
+            telegram botiga kiring va 1 daqiqalik kodingizni oling.
+          </p>
+        </div>
+        <form className="w-max">
+          <PinInput
+            length={6}
+            initialValue=""
+            secret
+            secretDelay={100}
+            onChange={(value, index) => {}}
+            type="numeric"
+            inputMode="number"
+            style={{ padding: "1px" }}
+            inputStyle={{
+              borderColor: "#ccc",
+              borderRadius: "1rem",
+              width: 40,
+            }}
+            inputFocusStyle={{ borderColor: "#f2360a" }}
+            onComplete={(value, index) => handleSubmit(value, index)}
+            autoSelect={true}
+            regexCriteria={/^[ A-Za-z0-9_@./#&+-]*$/}
+          />
+        </form>
+      </div>
     </div>
   );
 };

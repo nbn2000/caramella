@@ -12,3 +12,8 @@ export { default as Badge } from "@/svg/Badge";
 export { default as Dot } from "@/svg/Dot";
 export { default as Cancel } from "@/svg/Cancel";
 export { default as Facebook } from "@/svg/Facebook";
+export { default as Loader } from "@/svg/Loader";
+export { default as BackArrow } from "@/svg/BackArrow";
+export { default as CarretUp } from "@/svg/CarretUp";
+export { default as CarretDown } from "@/svg/CarretDown";
+export { default as Trash } from "@/svg/Trash";
