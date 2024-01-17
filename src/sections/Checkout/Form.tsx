@@ -107,6 +107,7 @@ const Form = () => {
                 locale={uzCyrl}
                 color="#f2360a"
                 editableDateInputs={true}
+                minDate={new Date()}
               />
             </div>
           )}
