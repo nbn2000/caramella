@@ -6,25 +6,7 @@ import { enqueueSnackbar } from "notistack";
 const LoginModal = ({ setOpen, open }: { setOpen: any; open: boolean }) => {
   const modalClass = open ? "fixed" : "hidden";
   const handleSubmit = async (value: any, index: any) => {
-    try {
-      const config = {
-        method: "POST",
-        url: "http://localhost:8080/api/signup",
-        headers: {
-          "Content-type": "application/json",
-        },
-        data: JSON.stringify({ passCode: value }),
-      };
-      const data = await axios(config);
-      const res = data.data;
-      const { status, message } = res;
-      enqueueSnackbar(message, { variant: status });
-      setOpen(false);
-    } catch (err: any) {
-      const { status, message } = err?.response?.data;
-      enqueueSnackbar(message, { variant: status });
-      console.log(err);
-    }
+    console.log(value);
   };
 
   return (

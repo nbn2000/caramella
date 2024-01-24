@@ -21,6 +21,8 @@ const Header = () => {
             <Image
               src={cupcake}
               alt="cupcake"
+              height={289}
+              width={246}
               className="absolute bottom-0 right-5"
               loading="lazy"
             />

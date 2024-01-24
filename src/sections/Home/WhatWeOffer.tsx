@@ -22,7 +22,6 @@ const WhatWeOffer = () => {
               alt="birthday cake"
               width={384}
               height={254}
-              className="w-[384px] h-[254px]"
               loading="lazy"
             />
           </figure>
@@ -44,7 +43,6 @@ const WhatWeOffer = () => {
               alt="cookies"
               width={384}
               height={254}
-              className="w-[384px] h-[254px]"
               loading="lazy"
             />
           </figure>
@@ -68,7 +66,6 @@ const WhatWeOffer = () => {
               alt="biscuits for cake"
               width={384}
               height={254}
-              className="w-[384px] h-[254px]"
               loading="lazy"
             />
           </figure>

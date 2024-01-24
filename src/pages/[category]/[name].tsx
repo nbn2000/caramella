@@ -2,18 +2,25 @@ import { useRouter } from "next/router";
 import Error from "next/error";
 import Head from "next/head";
 import SectionProduct from "@/sections/Product/view/SectionProduct";
-import { array } from "@/mock";
 import { Loader } from "@/svg/view";
+import { useLazyGetSingleCardQuery } from "@/api/card-api-req";
+import { useEffect } from "react";
 
 const Product = () => {
   const router = useRouter();
   const id = router.query.name;
-  const object = array.find((i) => id === i.id);
+  const [getSingleCard, { data, isLoading, isError }] =
+    useLazyGetSingleCardQuery();
 
-  if (id === undefined) {
+  useEffect(() => {
+    if (id !== undefined) {
+      getSingleCard(String(id));
+    }
+  }, [id, getSingleCard]);
+  if (isLoading || id === undefined) {
     return <Loader />;
   } else {
-    if (object === undefined) {
+    if (isError) {
       return (
         <>
           <Head>
@@ -28,7 +35,7 @@ const Product = () => {
           <Head>
             <title>Product page</title>
           </Head>
-          <SectionProduct data={object} />
+          <SectionProduct data={data} />
         </div>
       );
     }
