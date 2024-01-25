@@ -1,27 +1,44 @@
 import { CarretUp, CarretDown, Trash } from "@/svg/view";
 
-import { array } from "@/mock";
 import Image from "next/image";
 import { useState } from "react";
 import { StaticImageData } from "next/image";
+import { useChangeAmountMutation } from "@/api/cart.api.req";
 
 const Cards = ({
   img,
   description,
   price,
   name,
+  amount,
+  device_id,
+  product_id,
 }: {
   img: StaticImageData;
   description: string;
   price: number;
   name: string;
+  amount: number;
+  device_id: string;
+  product_id: string;
 }) => {
-  const [count, setCount] = useState(1);
-  const handleCountButton = (calc: boolean) => {
+  const [count, setCount] = useState(amount);
+  const [changeAmount] = useChangeAmountMutation();
+  const handleCountButton = async (calc: boolean) => {
     if (calc) {
-      setCount(count + 1);
+      await changeAmount({ device_id, product_id, amount: count + 1 })
+        .unwrap()
+        .then(() => {
+          setCount(count + 1);
+        });
     } else {
-      if (count > 1) setCount(count - 1);
+      if (count > 1) {
+        await changeAmount({ device_id, product_id, amount: count - 1 })
+          .unwrap()
+          .then(() => {
+            setCount(count - 1);
+          });
+      }
     }
   };
   return (
@@ -75,7 +92,7 @@ const Cards = ({
       </div>
 
       <div className="flex flex-row justify-center items-center gap-4 whitespace-nowrap md:!justify-between md:w-[95%]">
-        <span className="b-125 text-text233">$ {price}</span>
+        <span className="b-125 text-text233">{price} сўм</span>
         <Trash />
       </div>
     </div>

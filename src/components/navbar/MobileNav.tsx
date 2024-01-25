@@ -67,9 +67,9 @@ const MobileNav = () => {
                   htmlFor="my-drawer"
                   aria-label="close sidebar"
                   className="drawer-overlay w-full l-1125 text-text232"
-                  onClick={() => handlNavigate("/order")}
+                  onClick={() => handlNavigate("/cart")}
                 >
-                  Oreder
+                  Cart
                 </label>
               </li>
               <li className="active:bg-transparent">

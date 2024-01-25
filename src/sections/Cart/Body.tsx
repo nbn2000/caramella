@@ -1,16 +1,22 @@
-import { BackArrow, Underline } from "@/svg/view";
+import { BackArrow, Underline, Loader } from "@/svg/view";
 import Link from "next/link";
 import React from "react";
-import { array } from "@/mock";
 import Cards from "./Cards";
 import { useRouter } from "next/router";
+import { useGetCartQuery } from "@/api/cart.api.req";
 
 const Body = () => {
   const router = useRouter();
-  const repeatedArray = Array.from(
-    { length: 3 },
-    (_, index) => array[index % array.length]
+  const id = JSON.parse(localStorage.getItem("device_id") || "");
+  const { data, isLoading, isError } = useGetCartQuery(id);
+  const totalAmount = data?.cart?.reduce(
+    (sum: any, item: any) => sum + item.amount,
+    0
   );
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   const handleCheckout = () => {
     router.push("/checkout");
@@ -34,16 +40,19 @@ const Body = () => {
               <Underline className="absolute  -bottom-4 left-0 w-[100%]" />
             </span>
           </h3>
-          <p className="text-gray-500 mt-4">Хозир сизда 3 та махсулот бор</p>
+          <p className="text-gray-500 mt-4">{`Хозир сизда ${data?.cart?.length} та махсулот бор`}</p>
         </div>
         <div className="flex flex-col gap-4">
-          {repeatedArray.map((i, idx) => (
+          {data?.cart?.map((i: any, idx: number) => (
             <div key={idx}>
               <Cards
                 img={i.file}
-                description={i.describtion}
+                description={i.description}
                 price={i.price}
                 name={i.name}
+                amount={i.amount}
+                device_id={id}
+                product_id={i._id}
               />
             </div>
           ))}
@@ -54,14 +63,14 @@ const Body = () => {
           <span className="h-175063 md:text-base text-dark opacity-60">
             Жами Нархи:
           </span>
-          <span className="h-175063 md:text-[1.3rem] whitespace-nowrap text-text232">{`$ 22.00`}</span>
+          <span className="h-175063 md:text-[1.3rem] whitespace-nowrap text-text232">{`${data?.total_price} сўм`}</span>
         </div>
         <div>
           <span className="h-175063  md:text-[1.3rem] text-text232">
             <small className="opacity-60 h-175063 md:text-base">
               Махсулот Сони:{" "}
             </small>
-            3
+            {totalAmount}
           </span>
         </div>
         <hr className="w-full h-[2px] bg-gray-500" />

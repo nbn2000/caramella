@@ -17,13 +17,15 @@ const ImageSlider = ({ files }: { files: string[] }) => {
         {Array.isArray(files) &&
           files.map((image, index) => (
             <SwiperSlide key={index}>
-              <div className="flex h-full w-full items-center justify-center">
+              <div className="relative overflow-hidden flex h-full w-full items-center justify-center">
                 <Image
                   src={image}
                   alt={String(index)}
-                  className=" rounded-lg"
-                  fill
+                  className="rounded-lg w-full h-full"
+                  width={0}
+                  height={0}
                   loading="lazy"
+                  sizes="100vw"
                 />
               </div>
             </SwiperSlide>

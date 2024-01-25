@@ -12,8 +12,24 @@ export const cardApiReq = api.injectEndpoints({
       query: () => `${CARD.GETTHREENEWCARD}`,
       transformResponse: (data: any) => data.innerData,
     }),
+    getPaginationCard: builder.query({
+      query: ({
+        category,
+        page,
+        limit,
+      }: {
+        category: any;
+        page: string;
+        limit: string;
+      }) =>
+        `${CARD.GETPAGINATIONCARD}?category=${category}&page=${page}&limit=${limit}`,
+      transformResponse: (data: any) => data.innerData,
+    }),
   }),
 });
 
-export const { useLazyGetSingleCardQuery, useGetNewThreeCardQuery } =
-  cardApiReq;
+export const {
+  useLazyGetSingleCardQuery,
+  useGetNewThreeCardQuery,
+  useLazyGetPaginationCardQuery,
+} = cardApiReq;

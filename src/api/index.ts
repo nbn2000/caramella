@@ -19,7 +19,7 @@ const api = createApi({
       return headers;
     },
   }),
-  tagTypes: [],
+  tagTypes: ["ADDTOCART"],
   endpoints: () => ({}),
 });
 

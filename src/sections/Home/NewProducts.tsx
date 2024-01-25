@@ -1,6 +1,6 @@
 import { SmallUnderline } from "@/svg/view";
 import Cards from "@/components/Cards";
-import { useGetNewThreeCardQuery } from "@/api/card-api-req";
+import { useGetNewThreeCardQuery } from "@/api/card.api.req";
 import CardsSkeleton from "@/components/CardsSkeleton";
 
 const NewProducts = () => {

@@ -3,7 +3,7 @@ import Error from "next/error";
 import Head from "next/head";
 import SectionProduct from "@/sections/Product/view/SectionProduct";
 import { Loader } from "@/svg/view";
-import { useLazyGetSingleCardQuery } from "@/api/card-api-req";
+import { useLazyGetSingleCardQuery } from "@/api/card.api.req";
 import { useEffect } from "react";
 
 const Product = () => {

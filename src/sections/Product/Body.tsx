@@ -1,6 +1,9 @@
+import { useAddToCartMutation } from "@/api/cart.api.req";
 import ImageSlider from "./ImageSlider";
 import { SmallUnderline, Dot } from "@/svg/view";
 import { useState } from "react";
+import Link from "next/link";
+
 type objectInterface = [
   {
     value: string;
@@ -9,7 +12,9 @@ type objectInterface = [
 
 const body = ({ data }: { data: any }) => {
   const [count, setCount] = useState(0);
+  const [addToCart, { isLoading, isSuccess }] = useAddToCartMutation();
   const property: objectInterface = data?.property || [];
+
   const handleCountButton = (calc: boolean) => {
     if (calc) {
       setCount(count + 1);
@@ -17,6 +22,14 @@ const body = ({ data }: { data: any }) => {
       if (count > 1) setCount(count - 1);
     }
   };
+  const handleClick = async () => {
+    const device_id = JSON.parse(localStorage.getItem("device_id") || "");
+    const user = localStorage.getItem("user");
+    const product_id = data._id;
+    const amount = count;
+    await addToCart({ device_id, product_id, amount, user });
+  };
+
   return (
     <div className="cont-y container-p flex flex-row justify-between gap-8 1xl:flex-col 1xl:items-center 1xl:justify-center md:px-4">
       <div className="md:w-full">
@@ -68,9 +81,25 @@ const body = ({ data }: { data: any }) => {
               </button>
             </div>
           </div>
-          <button className="button-text w-full h-[50px] bg-orange rounded-[10px] text-white">
-            Add To Card
-          </button>
+          {!isSuccess ? (
+            <button
+              className="button-text w-full h-[50px] bg-orange rounded-[10px] text-white"
+              onClick={handleClick}
+            >
+              {isLoading ? (
+                <span className="loading loading-spinner" />
+              ) : (
+                "Add To Cart"
+              )}
+            </button>
+          ) : (
+            <Link
+              href="/cart"
+              className="flex justify-center items-center button-text w-full h-[50px] bg-orange rounded-[10px] text-white"
+            >
+              Go To Cart
+            </Link>
+          )}
         </div>
       </div>
     </div>
