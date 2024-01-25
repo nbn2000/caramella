@@ -12,11 +12,10 @@ const SendModal = ({
   setOpenModal: any;
   reference?: string;
 }) => {
-  console.log(openModal);
   const router = useRouter();
-  const hidden = "";
+  const hidden = openModal ? "absolute" : "hidden";
   const onCopy = () => {
-    copy("123123");
+    copy(reference || "");
     enqueueSnackbar("Номерингиз копия бўлди", { variant: "success" });
   };
 
@@ -25,7 +24,9 @@ const SendModal = ({
     setOpenModal(false);
   };
   return (
-    <div className="absolute z-50 opacity-100 p-4 w-[70%] h-[20rem] bg-gray-300 rounded-md top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+    <div
+      className={`${hidden} z-50 opacity-100 p-4 w-[70%] h-[20rem] bg-gray-300 rounded-md top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]`}
+    >
       <div className="flex flex-col justify-center items-center gap-4 w-full h-full">
         <h3 className="font-bold text-lg text-text233 text-center">
           Биздан харид қилганингиз учун рахмат!
@@ -33,7 +34,7 @@ const SendModal = ({
         <h4 className="text-base text-text232 text-center">
           Сизнинг Харид Рақамингиз{" "}
           <button className="font-extrabold cursor-pointer" onClick={onCopy}>
-            123123
+            {reference}
           </button>
         </h4>
         <p className="text-base text-text232 text-center">

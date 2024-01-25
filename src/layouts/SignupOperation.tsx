@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/navbar/view/Navbar";
 
 const Error = () => {
+  console.log("url", process.env.NEXT_PUBLIC_BASE_URL);
+
   return (
     <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
       <div className="flex flex-col justify-center items-center">

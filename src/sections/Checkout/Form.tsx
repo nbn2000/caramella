@@ -21,7 +21,7 @@ const Form = ({ data, user }: { data: object; user: object }) => {
     )
   );
   const [sendOrder, { isLoading, data: resData }] = useSendOrderMutation();
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const methods = useForm({
     defaultValues: {
       additionalPhoneNumber: "",
