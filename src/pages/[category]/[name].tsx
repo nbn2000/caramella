@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Error from "next/error";
+import Custom404 from "@/pages/404";
 import Head from "next/head";
 import SectionProduct from "@/sections/Product/view/SectionProduct";
 import { Loader } from "@/svg/view";
@@ -21,14 +21,7 @@ const Product = () => {
     return <Loader />;
   } else {
     if (isError) {
-      return (
-        <>
-          <Head>
-            <title>404 Not Found</title>
-          </Head>
-          <Error statusCode={404} />
-        </>
-      );
+      return <Custom404 />;
     } else {
       return (
         <div>

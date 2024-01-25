@@ -1,13 +1,16 @@
 import { BackArrow, Underline, Loader } from "@/svg/view";
 import Link from "next/link";
-import React from "react";
+import { useState } from "react";
 import Cards from "./Cards";
-import { useRouter } from "next/router";
 import { useGetCartQuery } from "@/api/cart.api.req";
+import LoginModal from "@/components/loginModal";
+import { useRouter } from "next/router";
 
 const Body = () => {
-  const router = useRouter();
+  const [open, setOpen] = useState(false);
   const id = JSON.parse(localStorage.getItem("device_id") || "");
+  const router = useRouter();
+  const user = localStorage.getItem("user") || "";
   const { data, isLoading, isError } = useGetCartQuery(id);
   const totalAmount = data?.cart?.reduce(
     (sum: any, item: any) => sum + item.amount,
@@ -19,7 +22,11 @@ const Body = () => {
   }
 
   const handleCheckout = () => {
-    router.push("/checkout");
+    if (user === "") {
+      setOpen(true);
+    } else {
+      router.push("/checkout");
+    }
   };
   return (
     <div className="cont-y container-p flex flex-row items-center justify-between gap-1 l:flex-col l:gap-6 ">
@@ -88,6 +95,7 @@ const Body = () => {
           келишингиз керак
         </p>
       </div>
+      <LoginModal setOpen={setOpen} open={open} checkout={true} />
     </div>
   );
 };

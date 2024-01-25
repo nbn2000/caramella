@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLazyUserSingupQuery } from "@/api/singup.api.req";
+import { useLazyDeviceSingupQuery } from "@/api/singup.api.req";
 import { Loader } from "@/svg/view";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/navbar/view/Navbar";
@@ -16,14 +16,14 @@ const Error = () => {
 };
 
 const SignupOperation = ({ children }: any) => {
-  const [userSingup, { isLoading, isError }] = useLazyUserSingupQuery();
+  const [deviceSingup, { isLoading, isError }] = useLazyDeviceSingupQuery();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     const device = localStorage.getItem("device_id");
     if (token === null && device === null) {
       console.log(token);
-      userSingup({});
+      deviceSingup({});
     }
   }, []);
 

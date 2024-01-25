@@ -1,10 +1,12 @@
 import api from "./index";
 import { USER } from "./urls";
+import { ErrorHandle } from "@/utils/ErrorHandle";
+import { ShowUserMessage } from "@/utils/ShowUserMessage";
 
 // singup api
 export const singupApiReq = api.injectEndpoints({
   endpoints: (builder) => ({
-    userSingup: builder.query({
+    deviceSingup: builder.query({
       query: () => `${USER.SIGNUP}`,
       transformResponse: (data: any) => {
         const token = localStorage.getItem("token");
@@ -18,7 +20,19 @@ export const singupApiReq = api.injectEndpoints({
         return data;
       },
     }),
+    userSignup: builder.mutation({
+      query: (body: any) => ({
+        url: `${USER.SIGNUPUSER}`,
+        method: "POST",
+        body,
+      }),
+      transformResponse: (res: any) => {
+        ShowUserMessage(res);
+        return res.innerData;
+      },
+      transformErrorResponse: (res: any) => ErrorHandle(res),
+    }),
   }),
 });
 
-export const { useLazyUserSingupQuery } = singupApiReq;
+export const { useLazyDeviceSingupQuery, useUserSignupMutation } = singupApiReq;

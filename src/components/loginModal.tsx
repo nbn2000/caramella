@@ -1,18 +1,36 @@
+import { useUserSignupMutation } from "@/api/singup.api.req";
 import { Cancel, Logo } from "@/svg/view";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import PinInput from "react-pin-input";
-import axios from "axios";
-import { enqueueSnackbar } from "notistack";
-const LoginModal = ({ setOpen, open }: { setOpen: any; open: boolean }) => {
+const LoginModal = ({
+  setOpen,
+  open,
+  checkout,
+}: {
+  setOpen: any;
+  open: boolean;
+  checkout?: boolean;
+}) => {
   const modalClass = open ? "fixed" : "hidden";
+  const [userSignup, { isLoading }] = useUserSignupMutation();
+  const opacity = isLoading ? "opacity-70" : "";
+  console.log(checkout);
+  const router = useRouter();
   const handleSubmit = async (value: any, index: any) => {
-    console.log(value);
+    await userSignup({ passCode: value })
+      .unwrap()
+      .then((data: object) => {
+        localStorage.setItem("user", JSON.stringify(data));
+        if (checkout) router.push("/checkout");
+        setOpen(false);
+      });
   };
 
   return (
     <div
       id="modal"
-      className={`modal-box z-50 md:p-4 sm:p-4 py-8 px-16 boxShadow bg-white rounded-xl top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ${modalClass}`}
+      className={`modal-box ${opacity} z-50 md:p-4 sm:p-4 py-8 px-16 boxShadow bg-white rounded-xl top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ${modalClass}`}
     >
       <button
         onClick={() => setOpen(false)}
@@ -30,6 +48,7 @@ const LoginModal = ({ setOpen, open }: { setOpen: any; open: boolean }) => {
             <Link
               href="https://t.me/register_caramella_bot"
               className="text-orange b-0875"
+              target="_blank"
             >
               @register_caramella_bot
             </Link>{" "}

@@ -11,10 +11,15 @@ export const VACANCY = {
 
 export const USER = {
   SIGNUP: "/singup/device",
+  SIGNUPUSER: "/add/user",
 };
 
 export const CART = {
   ADDTOCART: "/add/cart",
   GETCART: "/get/cart",
   CHANGEAMOUNT: "/change/cart/amount",
+};
+
+export const ORDER = {
+  SENDORDER: "/get/order",
 };

@@ -19,11 +19,13 @@ export const cartApiReq = api.injectEndpoints({
       },
       invalidatesTags: ["ADDTOCART"],
     }),
+
     getCart: builder.query({
       query: (id) => `${CART.GETCART}/${id}`,
       transformResponse: (res: any) => res?.innerData,
       providesTags: ["ADDTOCART"],
     }),
+
     changeAmount: builder.mutation({
       query: (body: any) => ({
         url: `${CART.CHANGEAMOUNT}`,
