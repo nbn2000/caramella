@@ -7,6 +7,7 @@ export const CARD = {
 export const VACANCY = {
   GETALLVACANCY: "/getall/vacancy",
   GETSINGLEVACANCY: "/getsingle/vacancy", //with id
+  APPLIEDVACANCY: "/applied/vacancy",
 };
 
 export const USER = {

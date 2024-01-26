@@ -15,7 +15,6 @@ const LoginModal = ({
   const modalClass = open ? "fixed" : "hidden";
   const [userSignup, { isLoading }] = useUserSignupMutation();
   const opacity = isLoading ? "opacity-70" : "";
-  console.log(checkout);
   const router = useRouter();
   const handleSubmit = async (value: any, index: any) => {
     await userSignup({ passCode: value })

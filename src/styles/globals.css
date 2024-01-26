@@ -291,6 +291,12 @@ button:hover {
   * {
     font-size: 12px;
   }
+  .btn-contained,
+  .btn-outlined {
+    width: 130px;
+    height: 40px;
+    border-radius: 8px;
+  }
 
   .container-p {
     padding-left: 0;

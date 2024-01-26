@@ -56,7 +56,10 @@ const Form = ({ data, user }: { data: object; user: object }) => {
       />
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <RHFPhone />
+          <RHFPhone
+            name="additionalPhoneNumber"
+            placeholder="Your phone number"
+          />
 
           <div className="flex flex-row w-full justify-between items-center">
             <DateComponent
@@ -68,7 +71,7 @@ const Form = ({ data, user }: { data: object; user: object }) => {
               setSelectedTime={setSelectedTime}
             />
           </div>
-          <RHFTextarea />
+          <RHFTextarea name="comment" placeholder="Little bit about yourself" />
           <div className="flex flex-row justify-between gap-2 sm:flex-col sm:items-center">
             <button
               type="submit"

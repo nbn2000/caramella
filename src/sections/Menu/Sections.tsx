@@ -3,10 +3,11 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
 import { useLazyGetPaginationCardQuery } from "@/api/card.api.req";
+import Loader from "@/svg/Loader";
 
 const Sections = () => {
   const router = useRouter();
-  const query = router?.query?.query || "wedding-cake";
+  const query = router?.query?.query || "weddingCake";
   const [display, setDisplay] = useState(query);
   const [page, setPage] = useState("1");
   const [trigger, { data, isLoading }] = useLazyGetPaginationCardQuery();
@@ -67,7 +68,7 @@ const Sections = () => {
         </button>
       </div>
       <div className="cont-y">
-        <Cards data={data?.items || []} />
+        {isLoading ? <Loader /> : <Cards data={data?.items || []} />}
       </div>
       <div className="w-full flex justify-center items-center">
         <Pagination

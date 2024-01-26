@@ -13,7 +13,7 @@ const Gallery = () => {
   const [mainImg, setMainImg] = useState({
     id: 1,
     img: birthdayCake,
-    link: "/menu?query=birthday-cake",
+    link: "/menu?query=birthdayCake",
   });
   const [transition, setTransition] = useState(false);
   const hovered =
@@ -59,7 +59,7 @@ const Gallery = () => {
         <div
           className="wedding-cake absolute top-[0%] right-[25%] aspect-square w-[9%] lg:w-[13%] lg:right-[15%]"
           onMouseMove={() =>
-            handleHover(1, weddingCake, "/menu?query=wedding-cake")
+            handleHover(1, weddingCake, "/menu?query=weddingCake")
           }
         >
           <div className="relative w-full h-full">
@@ -78,7 +78,7 @@ const Gallery = () => {
         </div>
         <div
           className="biscuit absolute right-[25%] bottom-[0%] aspect-square w-[9%] lg:w-[13%] lg:right-[15%]"
-          onMouseMove={() => handleHover(2, biscuits, "/menu?query=biscuit")}
+          onMouseMove={() => handleHover(2, biscuits, "/menu?query=biscuits")}
         >
           <div className="relative w-full h-full">
             <Image
@@ -113,7 +113,7 @@ const Gallery = () => {
         <div
           className="custom-cake absolute left-[25%] bottom-[0%] aspect-square w-[9%] lg:w-[13%] lg:left-[15%]"
           onMouseMove={() =>
-            handleHover(4, customCake, "/menu?query=custom-cake")
+            handleHover(4, customCake, "/menu?query=customCake")
           }
         >
           <div className="relative w-full h-full">
@@ -132,7 +132,7 @@ const Gallery = () => {
 
         <div
           className="macarons absolute right-[15%] top-[50%] -translate-y-[50%] aspect-square w-[9%] lg:w-[13%] lg:right-[5%]"
-          onMouseMove={() => handleHover(5, macarons, "/menu?query=macaron")}
+          onMouseMove={() => handleHover(5, macarons, "/menu?query=macarons")}
         >
           <div className="relative w-full h-full">
             <Image
@@ -150,7 +150,7 @@ const Gallery = () => {
         <div
           className="birthday-cake absolute left-[25%] top-[0%] lg:left-[15%]  aspect-square w-[9%] lg:w-[13%]"
           onMouseMove={() =>
-            handleHover(6, birthdayCake, "/menu?query=birthday-cake")
+            handleHover(6, birthdayCake, "/menu?query=birthdayCake")
           }
         >
           <div className="relative w-full h-full ">

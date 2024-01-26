@@ -2,14 +2,20 @@ import { useState } from "react";
 import { PatternFormat } from "react-number-format";
 import { Controller, useFormContext } from "react-hook-form";
 
-const RHFPhone = () => {
+const RHFPhone = ({
+  name,
+  placeholder,
+}: {
+  name: string;
+  placeholder: string;
+}) => {
   const [onFocus, setOnFocus] = useState<boolean>(false);
   const { control } = useFormContext();
 
   return (
     <Controller
       control={control}
-      name="additionalPhoneNumber"
+      name={name}
       render={({ field: { onChange, name, value } }) => (
         <div className="relative z-0 w-full mb-5 group">
           {onFocus ? (
@@ -37,9 +43,9 @@ const RHFPhone = () => {
 
           <label
             htmlFor="tel"
-            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#f2360a] peer-focus:dark:text-[#f2360a] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            className="peer-focus:font-medium absolute text-sm sm:text-xs text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#f2360a] peer-focus:dark:text-[#f2360a] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
           >
-            Your phone number
+            {placeholder}
           </label>
         </div>
       )}
