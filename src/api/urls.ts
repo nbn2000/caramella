@@ -25,3 +25,7 @@ export const CART = {
 export const ORDER = {
   SENDORDER: "/get/order",
 };
+
+export const CONTACT = {
+  SENDCONTACT: "/send/contact",
+};

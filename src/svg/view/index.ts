@@ -17,3 +17,4 @@ export { default as BackArrow } from "@/svg/BackArrow";
 export { default as CarretUp } from "@/svg/CarretUp";
 export { default as CarretDown } from "@/svg/CarretDown";
 export { default as Trash } from "@/svg/Trash";
+export { default as Info } from "@/svg/InfoIcon";

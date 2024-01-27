@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import { Info } from "@/svg/view";
 
 const options = [
   { value: "09:00", label: "09:00" },
@@ -26,19 +27,44 @@ const options = [
 const SelectTime = ({
   selectedTime,
   setSelectedTime,
+  setIsTimeOpen,
+  setIsError,
+  isError,
 }: {
   selectedTime: any;
   setSelectedTime: any;
+  isError: { date: boolean; time: boolean };
+  setIsError: any;
+  setIsTimeOpen: any;
 }) => {
   return (
     <div className="relative z-20 w-[40%] mb-5 group">
       <Select
         value={selectedTime}
-        onChange={setSelectedTime}
+        onChange={() => {
+          setSelectedTime;
+          setIsTimeOpen(true);
+          setIsError({ date: isError.date, time: false });
+        }}
         options={options}
         isSearchable={false}
         placeholder="Вақтни танланг"
+        styles={{
+          control: (baseStyles: any, state: any) => ({
+            ...baseStyles,
+            boxShadow: "none",
+            borderColor:
+              state.isFocused || isError.time
+                ? "red !important"
+                : "grey !important",
+          }),
+        }}
       />
+      {isError.time && (
+        <span className="text-[red] mt-[5px] text-sm flex flex-row gap-2 justify-start items-center">
+          <Info /> Илтимос вақтни танланг
+        </span>
+      )}
     </div>
   );
 };

@@ -22,6 +22,9 @@ const Form = ({ data, user }: { data: object; user: object }) => {
   );
   const [sendOrder, { isLoading, data: resData }] = useSendOrderMutation();
   const [openModal, setOpenModal] = useState(false);
+  const [isError, setIsError] = useState({ date: false, time: false });
+  const [isDateOpen, setIsDateOpen] = useState(false);
+  const [isTimeOpen, setIsTimeOpen] = useState(false);
   const methods = useForm({
     defaultValues: {
       additionalPhoneNumber: "",
@@ -32,6 +35,14 @@ const Form = ({ data, user }: { data: object; user: object }) => {
   const { handleSubmit } = methods;
 
   const onSubmit = async (event: any) => {
+    if (!isDateOpen) {
+      return setIsError({ date: true, time: isError.time });
+    }
+
+    if (!isTimeOpen) {
+      return setIsError({ date: isError.date, time: true });
+    }
+
     const submitObject = {
       ...event,
       date: selectedDate,
@@ -65,10 +76,16 @@ const Form = ({ data, user }: { data: object; user: object }) => {
             <DateComponent
               selectedDate={selectedDate}
               setSelectedDate={setSelectedDate}
+              setIsDateOpen={setIsDateOpen}
+              isError={isError}
+              setIsError={setIsError}
             />
             <SelectTime
               selectedTime={selectedTime}
               setSelectedTime={setSelectedTime}
+              setIsTimeOpen={setIsTimeOpen}
+              isError={isError}
+              setIsError={setIsError}
             />
           </div>
           <RHFTextarea name="comment" placeholder="Little bit about yourself" />

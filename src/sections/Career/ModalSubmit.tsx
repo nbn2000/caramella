@@ -4,6 +4,9 @@ import RHFTextfield from "@/components/hook-form/RHFTextfield";
 import { useForm, FormProvider } from "react-hook-form";
 import { Cancel } from "@/svg/view";
 import { useApplyVacancyMutation } from "@/api/vacancy.api.req";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { sendRequestSchema } from "@/utils/schema";
+
 const ModalSubmit = ({
   setOpen,
   open,
@@ -21,6 +24,7 @@ const ModalSubmit = ({
       description: "",
       tel: "",
     },
+    resolver: yupResolver(sendRequestSchema),
   });
 
   const { handleSubmit } = methods;
