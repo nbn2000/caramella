@@ -19,6 +19,7 @@ export const CART = {
   ADDTOCART: "/add/cart",
   GETCART: "/get/cart",
   CHANGEAMOUNT: "/change/cart/amount",
+  DELETEITEM: "/delete/cart/item",
 };
 
 export const ORDER = {

@@ -12,6 +12,24 @@ const Body = () => {
   const router = useRouter();
   const user = localStorage.getItem("user") || "";
   const { data, isLoading, isError } = useGetCartQuery(id);
+  if (isError) {
+    return (
+      <div className="cont-y container-p flex flex-col justify-center items-center gap-4">
+        <h1 className="h-175063 text-text233">
+          Хозирда сизнинг саватчангизда махсулот йўқ
+        </h1>
+        <h3 className="b-145475 text-orange">
+          Саватчани тўлдириш учун меню га ўтинг
+        </h3>
+        <Link
+          href="/menu"
+          className="flex flex-row items-center gap-4 button-text btn-contained !w-max p-2 text-white"
+        >
+          <BackArrow /> <span>Менюга ўтиш</span>
+        </Link>
+      </div>
+    );
+  }
   const totalAmount = data?.cart?.reduce(
     (sum: any, item: any) => sum + item.amount,
     0

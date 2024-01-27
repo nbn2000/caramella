@@ -34,6 +34,14 @@ export const cartApiReq = api.injectEndpoints({
       }),
       invalidatesTags: ["ADDTOCART"],
     }),
+    deleteItem: builder.mutation({
+      query: (body) => ({
+        url: `${CART.DELETEITEM}`,
+        method: "DELETE",
+        body,
+      }),
+      invalidatesTags: ["ADDTOCART"],
+    }),
   }),
 });
 
@@ -41,4 +49,5 @@ export const {
   useAddToCartMutation,
   useGetCartQuery,
   useChangeAmountMutation,
+  useDeleteItemMutation,
 } = cartApiReq;
