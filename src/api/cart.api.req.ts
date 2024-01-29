@@ -42,6 +42,12 @@ export const cartApiReq = api.injectEndpoints({
       }),
       invalidatesTags: ["ADDTOCART"],
     }),
+
+    checkItem: builder.query({
+      query: ({ device_id, _id }: { device_id: string; _id: string }) =>
+        `${CART.CHECKITEM}?device_id=${device_id}&_id=${_id}`,
+      transformResponse: (res: any) => res?.innerData,
+    }),
   }),
 });
 
@@ -50,4 +56,5 @@ export const {
   useGetCartQuery,
   useChangeAmountMutation,
   useDeleteItemMutation,
+  useLazyCheckItemQuery,
 } = cartApiReq;

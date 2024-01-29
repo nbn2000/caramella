@@ -1,7 +1,10 @@
-import { useAddToCartMutation } from "@/api/cart.api.req";
+import {
+  useAddToCartMutation,
+  useLazyCheckItemQuery,
+} from "@/api/cart.api.req";
 import ImageSlider from "./ImageSlider";
 import { SmallUnderline, Dot } from "@/svg/view";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 type objectInterface = [
@@ -12,8 +15,20 @@ type objectInterface = [
 
 const body = ({ data }: { data: any }) => {
   const [count, setCount] = useState(0);
-  const [addToCart, { isLoading, isSuccess }] = useAddToCartMutation();
+  const device_id = JSON.parse(localStorage.getItem("device_id") || "");
+  const [checkItem] = useLazyCheckItemQuery();
+  const [isBotton, setIsBotton] = useState<boolean>();
+  const [addToCart, { isLoading }] = useAddToCartMutation();
   const property: objectInterface = data?.property || [];
+
+  useEffect(() => {
+    const func = async () => {
+      await checkItem({ device_id, _id: data?._id })
+        .unwrap()
+        .then((data) => setIsBotton(data?.found));
+    };
+    func();
+  }, [isBotton]);
 
   const handleCountButton = (calc: boolean) => {
     if (calc) {
@@ -27,8 +42,26 @@ const body = ({ data }: { data: any }) => {
     const user = localStorage.getItem("user");
     const product_id = data._id;
     const amount = count;
-    await addToCart({ device_id, product_id, amount, user });
+    await addToCart({ device_id, product_id, amount, user })
+      .unwrap()
+      .then(() => setIsBotton(true));
   };
+  console.log(isBotton);
+  const customButton = isBotton ? (
+    <Link
+      href="/cart"
+      className="flex justify-center items-center button-text w-full h-[50px] bg-orange rounded-[10px] text-white"
+    >
+      Go To Cart
+    </Link>
+  ) : (
+    <button
+      className="button-text w-full h-[50px] bg-orange rounded-[10px] text-white"
+      onClick={handleClick}
+    >
+      {isLoading ? <span className="loading loading-spinner" /> : "Add To Cart"}
+    </button>
+  );
 
   return (
     <div className="cont-y container-p flex flex-row justify-between gap-8 1xl:flex-col 1xl:items-center 1xl:justify-center md:px-4">
@@ -81,25 +114,7 @@ const body = ({ data }: { data: any }) => {
               </button>
             </div>
           </div>
-          {!isSuccess ? (
-            <button
-              className="button-text w-full h-[50px] bg-orange rounded-[10px] text-white"
-              onClick={handleClick}
-            >
-              {isLoading ? (
-                <span className="loading loading-spinner" />
-              ) : (
-                "Add To Cart"
-              )}
-            </button>
-          ) : (
-            <Link
-              href="/cart"
-              className="flex justify-center items-center button-text w-full h-[50px] bg-orange rounded-[10px] text-white"
-            >
-              Go To Cart
-            </Link>
-          )}
+          {customButton}
         </div>
       </div>
     </div>

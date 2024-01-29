@@ -3,17 +3,21 @@ import dynamic from "next/dynamic";
 import { useGetCartQuery } from "@/api/cart.api.req";
 import Loader from "@/svg/Loader";
 import Custom404 from "@/pages/404";
+import { useState } from "react";
 const Form = dynamic(() => import("./Form"), { ssr: false });
 
 const Body = ({ user }: { user: object }) => {
   const id = JSON.parse(localStorage.getItem("device_id") || "");
+  const [ifNotPurchase, setIfNotPurchase] = useState(true);
   const { data, isLoading, isError } = useGetCartQuery(id);
 
   if (isLoading) {
     return <Loader />;
   }
-  if (isError) {
-    return <Custom404 />;
+  if (ifNotPurchase) {
+    if (isError) {
+      return <Custom404 />;
+    }
   }
   return (
     <div className="cont-y relative container-p flex flex-row gap-6 xl:flex-col xl:justify-center xl:items-center justify-between items-start">
@@ -30,7 +34,7 @@ const Body = ({ user }: { user: object }) => {
             буюртмангизни бошлай ололмаймиз{" "}
           </span>
         </div>
-        <Form data={data} user={user} />
+        <Form data={data} user={user} setIfNotPurchase={setIfNotPurchase} />
       </div>
       <div className="flex flex-col gap-6 w-[45%] lg:!w-[80%] xl:w-[65%]">
         <h3 className="h-237575 text-text232 md:text-[2rem]">Буюртмалар:</h3>

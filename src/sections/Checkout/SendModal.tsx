@@ -25,7 +25,7 @@ const SendModal = ({
   };
   return (
     <div
-      className={`${hidden} z-50 opacity-100 p-4 w-[70%] h-[20rem] bg-gray-300 rounded-md top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]`}
+      className={`${hidden} z-50 opacity-100 p-4 w-full h-full bg-gray-300 rounded-md top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]`}
     >
       <div className="flex flex-col justify-center items-center gap-4 w-full h-full">
         <h3 className="font-bold text-lg text-text233 text-center">

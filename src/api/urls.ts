@@ -20,6 +20,7 @@ export const CART = {
   GETCART: "/get/cart",
   CHANGEAMOUNT: "/change/cart/amount",
   DELETEITEM: "/delete/cart/item",
+  CHECKITEM: "/check/item",
 };
 
 export const ORDER = {

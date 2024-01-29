@@ -9,7 +9,15 @@ import SelectTime from "@/components/hook-form/SelectTime";
 import { useSendOrderMutation } from "@/api/order.api.req";
 import SendModal from "./SendModal";
 
-const Form = ({ data, user }: { data: object; user: object }) => {
+const Form = ({
+  data,
+  user,
+  setIfNotPurchase,
+}: {
+  data: object;
+  user: object;
+  setIfNotPurchase: any;
+}) => {
   const [selectedTime, setSelectedTime] = useState<any>();
   const [selectedDate, setSelectedDate] = useState(
     String(
@@ -56,6 +64,7 @@ const Form = ({ data, user }: { data: object; user: object }) => {
       .unwrap()
       .then((res: any) => {
         setOpenModal(true);
+        setIfNotPurchase(false);
       });
   };
 
