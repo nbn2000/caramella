@@ -51,6 +51,7 @@ const Form = ({ data, user }: { data: object; user: object }) => {
     };
     submitObject.user = user;
     delete submitObject._id;
+    console.log(submitObject);
     await sendOrder(submitObject)
       .unwrap()
       .then((res: any) => {

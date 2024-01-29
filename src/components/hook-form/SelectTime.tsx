@@ -37,15 +37,16 @@ const SelectTime = ({
   setIsError: any;
   setIsTimeOpen: any;
 }) => {
+  const handleTime = (e: { value: string; lebel: string }) => {
+    setSelectedTime(e);
+    setIsTimeOpen(true);
+    setIsError({ date: isError.date, time: false });
+  };
   return (
     <div className="relative z-20 w-[40%] mb-5 group">
       <Select
         value={selectedTime}
-        onChange={() => {
-          setSelectedTime;
-          setIsTimeOpen(true);
-          setIsError({ date: isError.date, time: false });
-        }}
+        onChange={(e) => handleTime(e)}
         options={options}
         isSearchable={false}
         placeholder="Вақтни танланг"
