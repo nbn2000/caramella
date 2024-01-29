@@ -10,10 +10,9 @@ const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: `${BASE_URL}/api`,
     prepareHeaders: (headers) => {
-      const storedToken = localStorage.getItem("token");
-      const accessToken = storedToken ? JSON.parse(storedToken) : null;
-      if (accessToken) {
-        headers.set("Authorization", `Bearer ${accessToken}`);
+      const token = localStorage.getItem("token");
+      if (token) {
+        headers.set("Authorization", `Bearer ${token}`);
       }
       headers.set("Access-Control-Allow-Origin", "*");
       return headers;
