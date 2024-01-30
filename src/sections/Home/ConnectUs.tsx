@@ -19,11 +19,12 @@ const ConnectUs = () => {
     },
     resolver: yupResolver(contactUsSchema),
   });
-  const { handleSubmit } = methods;
+  const { handleSubmit, reset } = methods;
 
   const onSubmit = async (event: any) => {
-    console.log(event.tel);
-    // await contactUs(event);
+    await contactUs(event)
+      .unwrap()
+      .then(() => reset());
   };
 
   return (

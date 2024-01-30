@@ -19,10 +19,12 @@ const ContactAndForm = () => {
     },
     resolver: yupResolver(contactUsSchema),
   });
-  const { handleSubmit } = methods;
+  const { handleSubmit, reset } = methods;
 
   const onSubmit = async (event: any) => {
-    await contactUs(event);
+    await contactUs(event)
+      .unwrap()
+      .then(() => reset());
   };
   return (
     <div className="cont-y container-p flex flex-row justify-between items-start gap-6 lg:flex-col lg:items-center">

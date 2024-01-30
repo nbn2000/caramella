@@ -29,7 +29,7 @@ const ModalSubmit = ({
 
   const { handleSubmit } = methods;
   const onSubmit = async (event: any) => {
-    await applyVacancy({ vacancyId: vacancy._id, ...event })
+    await applyVacancy({ vacancyId: `${vacancy._id}`, ...event })
       .unwrap()
       .then(() => setOpen(false));
   };

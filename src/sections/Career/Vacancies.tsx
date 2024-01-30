@@ -13,7 +13,7 @@ const Vacancies = () => {
   if (isLoading) {
     return <Loader />;
   }
-  if (data.length === 0) {
+  if (data?.length === 0) {
     return (
       <div className="cont-y container-p flex justify-center items-center">
         <h3 className="h-175063 text-text232 mb-10 ">
