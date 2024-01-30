@@ -1,6 +1,7 @@
 import React from "react";
+import type { SVGProps } from "react";
 
-const Cookies = (props: any) => {
+const Cookies = (props?: SVGProps<SVGSVGElement>) => {
   return (
     <div className="relative w-min h-max">
       <svg

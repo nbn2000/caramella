@@ -1,6 +1,7 @@
 import React from "react";
+import type { SVGProps } from "react";
 
-const BirthdayCake = (props: any) => {
+const BirthdayCake = (props?: SVGProps<SVGSVGElement>) => {
   return (
     <div className="relative w-max h-max">
       <svg

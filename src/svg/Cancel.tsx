@@ -1,6 +1,7 @@
 import React from "react";
+import type { SVGProps } from "react";
 
-const Cancel = (props: any) => {
+const Cancel = (props?: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

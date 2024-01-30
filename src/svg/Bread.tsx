@@ -1,6 +1,7 @@
 import React from "react";
+import type { SVGProps } from "react";
 
-const Bread = (props: any) => {
+const Bread = (props?: SVGProps<SVGSVGElement>) => {
   return (
     <div className="relative w-min h-max">
       <svg

@@ -1,12 +1,16 @@
-import { Logo, Profile, Menu } from "@/svg/view";
+import { Logo, Profile, Menu, Login, Logout } from "@/svg/view";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import LoginModal from "../loginModal";
+import { links } from "./links";
 
 const MobileNav = () => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const login = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user") || "")
+    : null;
 
   const handlNavigate = (link: string) => {
     router.push(link);
@@ -22,66 +26,28 @@ const MobileNav = () => {
               <Menu color="#f2360a" size={20} />
             </label>
           </div>
-          <div className="drawer-side z-50">
+          <div className="drawer-side z-50 ">
             <label
               htmlFor="my-drawer"
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <ul className="menu flex flex-col gap-4  p-4 w-[250px] h-full bg-base-200 text-base-content">
-              <li>
-                <div>My Profile</div>
-              </li>
-              <li className="active:bg-transparent">
-                <label
-                  htmlFor="my-drawer"
-                  aria-label="close sidebar"
-                  className="drawer-overlay w-full l-1125 text-text232"
-                  onClick={() => handlNavigate("/about")}
+            <ul className="menu flex flex-col gap-4  p-4 w-[250px] h-full bg-white text-base-content">
+              {links.map((i, idx) => (
+                <li
+                  key={idx}
+                  className="active:bg-gray-500 hover:bg-gray-500 rounded-sm"
                 >
-                  About
-                </label>
-              </li>
-              <li className="active:bg-transparent">
-                <label
-                  htmlFor="my-drawer"
-                  aria-label="close sidebar"
-                  className="drawer-overlay w-full l-1125 text-text232"
-                  onClick={() => handlNavigate("/menu")}
-                >
-                  Menu
-                </label>
-              </li>
-              <li className="active:bg-transparent">
-                <label
-                  htmlFor="my-drawer"
-                  aria-label="close sidebar"
-                  className="drawer-overlay w-full l-1125 text-text232"
-                  onClick={() => handlNavigate("/career")}
-                >
-                  Careers
-                </label>
-              </li>
-              <li className="active:bg-transparent">
-                <label
-                  htmlFor="my-drawer"
-                  aria-label="close sidebar"
-                  className="drawer-overlay w-full l-1125 text-text232"
-                  onClick={() => handlNavigate("/cart")}
-                >
-                  Cart
-                </label>
-              </li>
-              <li className="active:bg-transparent">
-                <label
-                  htmlFor="my-drawer"
-                  aria-label="close sidebar"
-                  className="drawer-overlay w-full l-1125 text-text232"
-                  onClick={() => handlNavigate("/contact")}
-                >
-                  Contact
-                </label>
-              </li>
+                  <label
+                    htmlFor="my-drawer"
+                    aria-label="close sidebar"
+                    className="drawer-overlay w-full l-1125 text-text232 hover:text-white active:text-white"
+                    onClick={() => handlNavigate(i.link)}
+                  >
+                    {i.label}
+                  </label>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -91,10 +57,46 @@ const MobileNav = () => {
           <Logo />
         </Link>
       </div>
-      <button onClick={() => setOpen(true)}>
-        <Profile color="#F2360A" />
-      </button>
-      <LoginModal setOpen={setOpen} open={open} />
+      {login ? (
+        <details className="dropdown">
+          <summary className="m-1 btn shadow-none">
+            <div className="flex flex-row items-center justify-center gap-[0.31rem]">
+              <Profile color="#F2360A" />{" "}
+            </div>
+          </summary>
+          <ul className="p-2 shadow menu bg-white opacity-100 dropdown-content z-50 rounded-box w-52 right-0">
+            <li>
+              <span className="l-1125 text-text232">{login?.phoneNumber}</span>
+            </li>
+            {login?.userName && (
+              <li>
+                <span className="l-1125 text-text232">{login?.userName}</span>
+              </li>
+            )}
+            <li>
+              <button
+                className="flex flex-row justify-start items-center"
+                onClick={() => {
+                  localStorage.removeItem("user");
+                  window.location.reload();
+                }}
+              >
+                <div className="w-[24px]">
+                  <Logout color="#F2360A" />
+                </div>
+                <span className="l-1125 text-text232 w-max">Чиқиш</span>
+              </button>
+            </li>
+          </ul>
+        </details>
+      ) : (
+        <>
+          <button onClick={() => setOpen(true)}>
+            <Login color="#F2360A" />
+          </button>
+          <LoginModal setOpen={setOpen} open={open} />
+        </>
+      )}
     </nav>
   );
 };

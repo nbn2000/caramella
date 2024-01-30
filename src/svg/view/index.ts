@@ -18,3 +18,5 @@ export { default as CarretUp } from "@/svg/CarretUp";
 export { default as CarretDown } from "@/svg/CarretDown";
 export { default as Trash } from "@/svg/Trash";
 export { default as Info } from "@/svg/InfoIcon";
+export { default as Login } from "@/svg/Login";
+export { default as Logout } from "@/svg/Logout";
