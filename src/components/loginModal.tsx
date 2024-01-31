@@ -41,7 +41,7 @@ const LoginModal = ({
         <Logo />
         <div className="flex flex-col justify-center items-center text-center">
           <h4 className="h-175063 text-orange whitespace-nowrap">
-            Kodni Kiriting
+            Кодни Киритинг
           </h4>
           <p className="b-0875">
             <Link
@@ -51,7 +51,7 @@ const LoginModal = ({
             >
               @register_caramella_bot
             </Link>{" "}
-            telegram botiga kiring va 1 daqiqalik kodingizni oling.
+            телеграм ботига киринг ва 1 дақиқалик кодингизни олинг
           </p>
         </div>
         <form className="w-max">

@@ -7,6 +7,7 @@ export default function AboutUs() {
       <Head>
         <title>About Us</title>
       </Head>
+
       <SectionAboutUs />
     </>
   );

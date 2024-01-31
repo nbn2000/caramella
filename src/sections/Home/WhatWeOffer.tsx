@@ -9,9 +9,10 @@ const WhatWeOffer = () => {
   return (
     <div className="container-p cont-y">
       <h2 className="h-237575 text-text232 text-center mb-10">
-        What We{" "}
+        Биз Нима{" "}
         <span className="h-237575 text-orange relative">
-          Offer <SmallUnderline className="absolute -bottom-2 left-0 w-full" />
+          Таклиф Қиламиз{" "}
+          <SmallUnderline className="absolute -bottom-2 left-0 w-full" />
         </span>
       </h2>
       <div className={styles.body}>
@@ -26,14 +27,15 @@ const WhatWeOffer = () => {
             />
           </figure>
           <div className="card-body">
-            <h2 className="card-title text-black h-175063">Birthday Cakes</h2>
+            <h2 className="card-title text-black h-175063">
+              Турли хил тортлар
+            </h2>
             <p className="text-text233 b-0875">
-              We provide variety of birthday cakes for any party made with
-              high-qualty natural ingridients and no preservatives
+              Биз ҳар қандай зиёфат ёки тўй учун юқори сифатли табиий
+              ингредиентлар ва консервантларсиз тайёрланган турли хил тортларни
+              тақдим этамиз.
             </p>
-            <div className="card-actions justify-end">
-              <button className="text-white btn bg-orange">Read More</button>
-            </div>
+            <div className="card-actions justify-end"></div>
           </div>
         </div>
         <div className="card card-compact w-[22rem] h-[22rem] bg-base-100 shadow-xl hover:scale-[0.99] hover:transition-all">
@@ -48,15 +50,14 @@ const WhatWeOffer = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title text-black h-175063">
-              Veriety of Cookies
+              Турли Хил Печёнийлар
             </h2>
             <p className="text-text233 b-0875">
-              We provide variety of birthday cakes for any party made with
-              high-qualty natural ingridients and no preservatives
+              Килограмм ёки лаганда сотиладиган печёнийлар кенг ассортиментини
+              кашф этинг. Вариантлар орасида "песёчнийлар", "пахлавалар" ва
+              бошқа турли хил жозибали навлар мавжуд.
             </p>
-            <div className="card-actions justify-end">
-              <button className="text-white btn bg-orange">Read More</button>
-            </div>
+            <div className="card-actions justify-end"></div>
           </div>
         </div>
         <div className="card card-compact w-[22rem] h-[22rem] bg-base-100 shadow-xl hover:scale-[0.99] hover:transition-all">
@@ -71,15 +72,14 @@ const WhatWeOffer = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title text-black h-175063">
-              Helf Ready Products
+              Ярим тайёр маҳсулотлар
             </h2>
             <p className="text-text233 b-0875">
-              We provide variety of birthday cakes for any party made with
-              high-qualty natural ingridients and no preservatives
+              Биз барча ингредиентларни сиз учун тайёрлаймиз; шунчаки шахсий
+              декорациянгизни қилинг ва волия, яқинларингизни ажойиб сюрприз
+              билан хурсанд қилинг.
             </p>
-            <div className="card-actions justify-end">
-              <button className="text-white btn bg-orange">Read More</button>
-            </div>
+            <div className="card-actions justify-end"></div>
           </div>
         </div>
       </div>

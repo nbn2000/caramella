@@ -79,7 +79,7 @@ const Form = ({
         <form onSubmit={handleSubmit(onSubmit)}>
           <RHFPhone
             name="additionalPhoneNumber"
-            placeholder="Your phone number"
+            placeholder="Сизнинг телефон рақамингиз"
           />
 
           <div className="flex flex-row w-full justify-between items-center">
@@ -98,7 +98,7 @@ const Form = ({
               setIsError={setIsError}
             />
           </div>
-          <RHFTextarea name="comment" placeholder="Little bit about yourself" />
+          <RHFTextarea name="comment" placeholder="Қўшимча илтимос" />
           <div className="flex flex-row justify-between gap-2 sm:flex-col sm:items-center">
             <button
               type="submit"
@@ -107,10 +107,10 @@ const Form = ({
               {isLoading ? (
                 <span className="loading loading-spinner" />
               ) : (
-                "Submit"
+                "Юбориш"
               )}
             </button>
-            <Link href="/" className="button-text btn-outlined">
+            <Link href="/" className=" button-text btn-outlined">
               Бош Сахифага
             </Link>
           </div>

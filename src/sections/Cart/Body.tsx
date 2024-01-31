@@ -103,7 +103,7 @@ const Body = () => {
           onClick={() => handleCheckout()}
           className="button-text text-white text-gr-white h-12 w-full bg-orange rounded-xl px-6"
         >
-          CHECKOUT
+          КАССА
         </button>
         <hr className="w-full h-[2px] bg-gray-500" />
         <p className="text-sm font-normal leading-5 text-dark opacity-80 w-full">

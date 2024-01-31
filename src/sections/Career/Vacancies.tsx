@@ -4,7 +4,7 @@ import Vacancy from "./Vacancy";
 import { useEffect, useState } from "react";
 
 const Vacancies = () => {
-  const { data, isLoading } = useGetAllVacancyQuery({});
+  const { data, isLoading, isError } = useGetAllVacancyQuery({});
   const firstVac = data !== undefined && data.length !== 0 ? data[0] : null;
   const [vacancy, setVacancy] = useState();
   useEffect(() => {
@@ -13,7 +13,7 @@ const Vacancies = () => {
   if (isLoading) {
     return <Loader />;
   }
-  if (data?.length === 0) {
+  if (data?.length === 0 || isError) {
     return (
       <div className="cont-y container-p flex justify-center items-center">
         <h3 className="h-175063 text-text232 mb-10 ">
@@ -26,9 +26,9 @@ const Vacancies = () => {
   return (
     <div className="cont-y container-p">
       <h3 className="h-237575 text-text232 mb-10 ">
-        Avialable{" "}
+        Мавжуд{" "}
         <span className="h-237575 text-orange relative">
-          Vacancies
+          Иш-Ўринлари
           <SmallUnderline className="absolute -bottom-2 left-0 w-full" />
         </span>
       </h3>

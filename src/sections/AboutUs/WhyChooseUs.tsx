@@ -9,10 +9,10 @@ const WhyChooseUs = () => {
     <div>
       <div className="cont-y">
         <h2 className="h-237575 text-text232 text-center mb-10 md:text-center">
-          Why{" "}
+          Нега Бизни{" "}
           <span className="h-237575 text-orange relative md:text-center whitespace-nowrap">
-            Choose
-            <SmallUnderline className="absolute -bottom-2 left-0 w-full" /> Us
+            Танлайсиз
+            <SmallUnderline className="absolute -bottom-2 left-0 w-full" />
           </span>
         </h2>
       </div>
@@ -28,12 +28,12 @@ const WhyChooseUs = () => {
             />
           </div>
           <h3 className="h-175063 text-[#000] max-w-[400px] text-center">
-            Our employees work hard
+            Махсулот Кафолати
             <hr className="w-[70%] h-[3px] bg-orange rounded-[30rem] my-1 mx-auto" />
           </h3>
           <p className="b-125  text-[#848383] text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-            molestiae.
+            Бизнинг махсулотимизни динимиз йетакчилари хам истемол қилиши сизга
+            махсулотимиз халоллигига далил беради
           </p>
         </div>
         <div className="flex flex-col justify-center items-center gap-6 max-w-[350px]">
@@ -47,12 +47,13 @@ const WhyChooseUs = () => {
             />
           </div>
           <h3 className="h-175063 text-[#000] max-w-[400px] text-center">
-            Our employees work hard
+            Махсулотимиз Бахоси
             <hr className="w-[70%] h-[3px] bg-orange rounded-[30rem] my-1 mx-auto" />
           </h3>
           <p className="b-125  text-[#848383] text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-            molestiae.
+            Мижозларимизни фикрича бизнинг компаниямиз шахардаги энг арзон лекин
+            юқори сифатли махсулотларни ишлаб чиқариш бўйича йетакчи ўринларни
+            эганлайди
           </p>
         </div>
         <div className="flex flex-col justify-center items-center gap-6 max-w-[350px]">
@@ -66,12 +67,12 @@ const WhyChooseUs = () => {
             />
           </div>
           <h3 className="h-175063 text-[#000] max-w-[400px] text-center">
-            Our employees work hard
+            Маҳсулот Хавфсизлиги
             <hr className="w-[70%] h-[3px] bg-orange rounded-[30rem] my-1 mx-auto" />
           </h3>
           <p className="b-125 text-[#848383] text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-            molestiae.
+            Биз мижозларимизни соғлигини ўйлаган ҳолда ва маҳсулотимизни
+            тозалигига ишонч ҳосил қилган ҳолда маҳсулотларимизни таёрлаймиз
           </p>
         </div>
       </div>

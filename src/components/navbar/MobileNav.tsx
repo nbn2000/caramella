@@ -1,9 +1,11 @@
-import { Logo, Profile, Menu, Login, Logout } from "@/svg/view";
+import { Profile, Menu, Login, Logout } from "@/svg/view";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import LoginModal from "../loginModal";
 import { links } from "./links";
+import CaramellaLogo from "@/assets/caramella-logo/caramella-logo.png";
 
 const MobileNav = () => {
   const router = useRouter();
@@ -16,17 +18,17 @@ const MobileNav = () => {
     router.push(link);
   };
   return (
-    <nav className="lg:flex hidden h-[90px] flex-row items-center justify-between container-p">
+    <nav className="lg:flex hidden h-[90px] flex-row items-center justify-between px-1">
       <div>
         <div className="drawer">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content">
+          <div className="drawer-content btn shadow-none">
             {/* Page content here */}
-            <label htmlFor="my-drawer" className="drawer-button">
+            <label htmlFor="my-drawer" className="drawer-button ">
               <Menu color="#f2360a" size={20} />
             </label>
           </div>
-          <div className="drawer-side z-50 ">
+          <div className="drawer-side z-50">
             <label
               htmlFor="my-drawer"
               aria-label="close sidebar"
@@ -52,13 +54,19 @@ const MobileNav = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="w-[50%] p-[2px]">
         <Link href="/">
-          <Logo />
+          <Image
+            width={0}
+            height={0}
+            className="w-full -hue-rotate-[50deg]"
+            src={CaramellaLogo}
+            alt="Caramella logo"
+          />
         </Link>
       </div>
       {login ? (
-        <details className="dropdown">
+        <details className="dropdown  ">
           <summary className="m-1 btn shadow-none">
             <div className="flex flex-row items-center justify-center gap-[0.31rem]">
               <Profile color="#F2360A" />{" "}

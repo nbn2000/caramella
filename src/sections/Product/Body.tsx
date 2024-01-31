@@ -52,14 +52,18 @@ const body = ({ data }: { data: any }) => {
       href="/cart"
       className="flex justify-center items-center button-text w-full h-[50px] bg-orange rounded-[10px] text-white"
     >
-      Go To Cart
+      Саватга ўтиш
     </Link>
   ) : (
     <button
       className="button-text w-full h-[50px] bg-orange rounded-[10px] text-white"
       onClick={handleClick}
     >
-      {isLoading ? <span className="loading loading-spinner" /> : "Add To Cart"}
+      {isLoading ? (
+        <span className="loading loading-spinner" />
+      ) : (
+        "Саватга қўшиш"
+      )}
     </button>
   );
 
@@ -75,16 +79,16 @@ const body = ({ data }: { data: any }) => {
         </h3>
         <div className="flex flex-col justify-start items-start gap-[1rem]">
           <div>
-            <h5 className=" b-0875 text-gray-500 ">Description:</h5>
+            <h5 className=" b-0875 text-gray-500 ">Тавсиф:</h5>
             <p className="b-125 text-text233">{data?.description}</p>
           </div>
           <div>
-            <h5 className="b-0875 text-gray-500 ">Price:</h5>
+            <h5 className="b-0875 text-gray-500 ">Нарх:</h5>
             <p className="b-125 text-text233">{data?.price} сўм</p>
           </div>
 
           <div>
-            <h5 className="b-0875 text-gray-500 ">Main Ingridients:</h5>
+            <h5 className="b-0875 text-gray-500 ">Асосий ингредиентлар:</h5>
             {Array.isArray(property) &&
               property?.map((i, idx) => (
                 <p
@@ -97,7 +101,7 @@ const body = ({ data }: { data: any }) => {
           </div>
 
           <div className="w-full">
-            <h5 className="b-0875 text-gray-500 ">Amount:</h5>
+            <h5 className="b-0875 text-gray-500 ">Сони:</h5>
             <div className="b-145475 mx-auto w-[200px] h-[50px] flex flex-row justify-between items-center bg-gray-200 rounded-md">
               <button
                 className="h-full bg-orange w-[50px] text-white rounded-tl rounded-bl"

@@ -10,19 +10,19 @@ const Benefits = () => {
   return (
     <div className="container-p cont-y flex flex-row justify-between items-start gap-6 xl:flex-col ">
       <div className="flex flex-col justify-start items-start gap-4 max-w-[27rem] 1xl:max-w-[23rem] xl:max-w-[27rem]">
-        <h2 className="h-175063 text-orange">Benefits</h2>
+        <h2 className="h-175063 text-orange">Афзалликлар</h2>
         <h3 className="h-237575 text-text232">
-          Why you Should Join Our{" "}
+          Нима учун бизнинг{" "}
           <span className="h-237575 text-orange relative">
-            Awesome
+            Aжойиб
             <SmallUnderline className="absolute -bottom-2 left-0 w-full" />
           </span>{" "}
-          Team
+          жамоамизга қўшилишингиз керак
         </h3>
         <p className="b-0875  text-[#848383]">
-          we want to feel like home when you are working at JMC(Japan Marketing
-          & Consultancy Limited) & for that we have curated a great set of
-          benefits for you.It all starts with the free lunch!
+          Биз сизни Caramella да ишлаётганингизда ўзингизни уйдагидек ҳис
+          қилишингизни хоҳлаймиз ва бунинг учун биз сиз учун ажойиб имтиёзлар
+          тўпламини тайёрлаганмиз. Ҳаммаси бепул тушликдан бошланади!
         </p>
       </div>
       <div className="flex flex-row flex-wrap justify-center items-center gap-5">
@@ -36,12 +36,12 @@ const Benefits = () => {
               className="object-cover w-[80px] h-[80px] "
             />
           </div>
-          <h3 className="b-145475 text-orange max-w-[200px] uppercase">
-            Clients
+          <h3 className="b-145475 text-[1.2rem] text-orange max-w-[200px] uppercase">
+            Мижозлар
           </h3>
           <p className="b-0875  text-[#848383] ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-            molestiae.
+            Бизнинг биринчи устуворлигимиз мижозларимиздир, лекин биз
+            бир-биримизга ғамхўрлик қиламиз
           </p>
         </div>
         <div className="flex flex-col justify-start items-start gap-2 max-w-[250px]">
@@ -54,12 +54,12 @@ const Benefits = () => {
               className="object-cover w-[80px] h-[80px]"
             />
           </div>
-          <h3 className="b-145475 text-orange max-w-[200px] uppercase">
-            Production
+          <h3 className="b-145475 text-orange max-w-[200px] uppercase whitespace-nowrap">
+            Ишлаб Чиқариш
           </h3>
           <p className="b-0875  text-[#848383] ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-            molestiae.
+            Биргаликда ишлаш орқали биз мақсадларимизга биргаликда эришамиз,
+            бунда ҳар бир ҳисса бизнинг умумий муваффақиятимизга муҳимдир
           </p>
         </div>{" "}
         <div className="flex flex-col justify-start items-start gap-2 max-w-[250px]">
@@ -73,11 +73,13 @@ const Benefits = () => {
             />
           </div>
           <h3 className="b-145475 text-orange max-w-[200px] uppercase">
-            We Are Family
+            Биз Оиламиз
           </h3>
           <p className="b-0875  text-[#848383] ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-            molestiae.
+            Биз унвон бўйича ҳамкасблар бўлсак-да, биз оддий ҳамкасблардан устун
+            турамиз, бу бизнинг ришталаримизни мустаҳкамлайдиган ва
+            қўллаб-қувватловчи меҳнат жамоасини ривожлантирадиган оила туйғусини
+            ўзида мужассам этган.
           </p>
         </div>{" "}
         <div className="flex flex-col justify-start items-start gap-2 max-w-[250px]">
@@ -91,11 +93,12 @@ const Benefits = () => {
             />
           </div>
           <h3 className="b-145475 text-orange max-w-[200px] uppercase">
-            Our Product
+            Маҳсулотимиз
           </h3>
           <p className="b-0875  text-[#848383] ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-            molestiae.
+            Бизнинг cомпаниямизнинг марказида мартабангизни кўтаринг. Ҳар бир
+            лаҳзага ширинлик қўшиб, нафис торт ва печене тайёрлашга ҳисса
+            қўшинг.
           </p>
         </div>
       </div>

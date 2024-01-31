@@ -22,7 +22,7 @@ const Body = ({ user }: { user: object }) => {
   return (
     <div className="cont-y relative container-p flex flex-row gap-6 xl:flex-col xl:justify-center xl:items-center justify-between items-start">
       <div className="flex flex-col gap-4 w-[40%] md:!px-0 lg:!w-full lg:px-[10%] xl:w-[55%] ">
-        <h3 className="h-237575 text-text232 md:text-[3rem]">Information</h3>
+        <h3 className="h-237575 text-text232 md:text-[3rem]">Ма'лумот</h3>
         <div className="flex flex-col max-w-[500px] gap-2">
           <span className="b-0875 text-gray-500 ">
             Агар телеграмда рўйхатдан ўтган телефон рақамингиз қўнғироқлар учун
