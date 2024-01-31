@@ -28,7 +28,7 @@ const Header = () => {
             />
           </div>
           <div className="max-w-[14.1875rem]">
-            <h4 className="h-237575 text-black">Chocolate Cake</h4>
+            <h4 className="h-237575 text-black">Шоколад торт</h4>
             <SmallUnderline />
           </div>
         </div>
@@ -36,9 +36,9 @@ const Header = () => {
           <div className="flex flex-col justify-start items-start gap-[1.13rem] md:justify-center md:items-center md:gap-3">
             <BirthdayCake />
             <div className="flex flex-col gap-[0.5rem]">
-              <h4 className="h-175063 text-black">Cake</h4>
+              <h4 className="h-175063 text-black">Торт</h4>
               <p className="b-0875 text-text233 max-w-[10.125rem]">
-                These cakes are made with butter
+                Момиқ, қаймоқли, қатламли, қониқарли
               </p>
             </div>
           </div>
@@ -46,9 +46,9 @@ const Header = () => {
           <div className="flex flex-col justify-start items-start gap-[1.13rem] md:justify-center md:items-center">
             <Cookies />
             <div className="flex flex-col gap-[0.5rem]">
-              <h4 className="h-175063 text-black">Cookies</h4>
+              <h4 className="h-175063 text-black">Печёний</h4>
               <p className="b-0875 text-text233 max-w-[10.125rem]">
-                These Cookies another fat, like vegetable
+                Қирсилайдигон, лекин оғизда тез ерийди
               </p>
             </div>
           </div>
@@ -57,9 +57,9 @@ const Header = () => {
           <div className="flex flex-col justify-start items-start gap-[1.13rem] md:justify-center md:items-center">
             <Bread />
             <div className="flex flex-col gap-[0.5rem]">
-              <h4 className="h-175063 text-black">Bread</h4>
+              <h4 className="h-175063 text-black">Бисквит</h4>
               <p className="b-0875 text-text233 max-w-[10.125rem]">
-                These Bread add eggs, and then add flour
+                Енгил, юмшоқ, табиий, ярим таёр
               </p>
             </div>
           </div>

@@ -5,6 +5,7 @@ import CardsSkeleton from "@/components/CardsSkeleton";
 
 const NewProducts = () => {
   const { data, isLoading, isError } = useGetNewThreeCardQuery({});
+  if (data?.length === 0) return;
   return (
     <div className="cont-y container-p">
       <h2 className="h-237575 text-text232 text-center mb-10">
