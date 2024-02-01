@@ -4,15 +4,19 @@ import Vacancy from "./Vacancy";
 import { useEffect, useState } from "react";
 
 const Vacancies = () => {
+  const [vacancy, setVacancy] = useState(null);
   const { data, isLoading, isError } = useGetAllVacancyQuery({});
-  const firstVac = data !== undefined && data.length !== 0 ? data[0] : null;
-  const [vacancy, setVacancy] = useState();
+
   useEffect(() => {
-    setVacancy(firstVac);
-  }, [vacancy, firstVac, setVacancy]);
+    if (!isLoading && !isError && data && data.length > 0) {
+      setVacancy(data[0]);
+    }
+  }, [data, isLoading, isError]);
+
   if (isLoading) {
     return <Loader />;
   }
+
   if (data?.length === 0 || isError) {
     return (
       <div className="cont-y container-p flex justify-center items-center">

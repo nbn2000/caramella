@@ -28,8 +28,8 @@ const DesktopNav = () => {
       </div>
       <div className="flex flex-row justify-center items-center gap-[3.44rem] 1xl:gap-4 xl:gap-2">
         {links.map((i, idx) => (
-          <div className="relative w-max">
-            <Link key={idx} href={i.link} className="l-1125 text-text232">
+          <div className="relative w-max" key={"linksDesktopNav" + idx}>
+            <Link href={i.link} className="l-1125 text-text232">
               {i.label}
             </Link>
             <div
