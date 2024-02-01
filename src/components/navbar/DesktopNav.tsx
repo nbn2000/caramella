@@ -13,7 +13,6 @@ const DesktopNav = () => {
     ? JSON.parse(localStorage.getItem("user") || "")
     : null;
   const [open, setOpen] = useState(false);
-
   return (
     <nav className="h-[130px] flex flex-row justify-between items-center container-p lg:hidden">
       <div className="w-[12%] p-[2px]">
@@ -29,13 +28,14 @@ const DesktopNav = () => {
       </div>
       <div className="flex flex-row justify-center items-center gap-[3.44rem] 1xl:gap-4 xl:gap-2">
         {links.map((i, idx) => (
-          <Link
-            key={idx}
-            href={i.link}
-            className="l-1125 text-text232 hover:underline hover:decoration-[#f2360a] hover:decoration-4"
-          >
-            {i.label}
-          </Link>
+          <div className="relative w-max">
+            <Link key={idx} href={i.link} className="l-1125 text-text232">
+              {i.label}
+            </Link>
+            <div
+              className={`underlineLink absolute bottom-0 bg-orange h-[5px]`}
+            ></div>
+          </div>
         ))}
       </div>
       {login ? (
