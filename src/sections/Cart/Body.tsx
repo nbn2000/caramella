@@ -8,7 +8,9 @@ import { useRouter } from "next/router";
 
 const Body = () => {
   const [open, setOpen] = useState(false);
-  const id = JSON.parse(localStorage.getItem("device_id") || "");
+  const id =
+    localStorage.getItem("device_id") &&
+    JSON.parse(localStorage.getItem("device_id") || "");
   const router = useRouter();
   const user = localStorage.getItem("user") || "";
   const { data, isLoading, isError } = useGetCartQuery(id);

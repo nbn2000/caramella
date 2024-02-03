@@ -26,7 +26,7 @@ const Product = () => {
       return (
         <div>
           <Head>
-            <title>Product page</title>
+            <title>Махсулот Сахифаси</title>
             <meta
               name="description"
               content="Indulge in our exquisite Product, a masterpiece of flavor and craftsmanship. Discover the perfect blend of high-quality ingredients meticulously curated to create a delightful treat. Explore our product's unique features. Order now and experience the epitome of sweetness with Caramella's artisanal creations."

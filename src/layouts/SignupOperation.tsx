@@ -19,8 +19,12 @@ const SignupOperation = ({ children }: any) => {
   const [deviceSingup, { isLoading, isError }] = useLazyDeviceSingupQuery();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const device = localStorage.getItem("device_id");
+    const token = localStorage.getItem("token")
+      ? localStorage.getItem("token")
+      : null;
+    const device = localStorage.getItem("device_id")
+      ? localStorage.getItem("device_id")
+      : null;
     if (token === null && device === null) {
       console.log(token);
       deviceSingup({});
