@@ -1,10 +1,12 @@
 import { Profile, Login, Logout } from "@/svg/view";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import CaramellaLogo from "@/assets/caramella-logo/caramella-logo.png";
 import { links } from "./links";
+import styles from "@/styles/links.module.css";
+import { useRouter } from "next/router";
 
 const LoginModal = dynamic(() => import("../loginModal"), { ssr: false });
 
@@ -13,6 +15,8 @@ const DesktopNav = () => {
     ? JSON.parse(localStorage.getItem("user") || "")
     : null;
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+
   return (
     <nav className="h-[130px] flex flex-row justify-between items-center container-p lg:hidden">
       <div className="w-[12%] p-[2px]">
@@ -28,13 +32,17 @@ const DesktopNav = () => {
       </div>
       <div className="flex flex-row justify-center items-center gap-[3.44rem] 1xl:gap-4 xl:gap-2">
         {links.map((i, idx) => (
-          <div className="relative w-max" key={"linksDesktopNav" + idx}>
+          <div
+            className={
+              router.pathname === i.link
+                ? `${styles.deskLink}  ${styles.deskActive}`
+                : `${styles.deskLink}`
+            }
+            key={"linksDesktopNav" + idx}
+          >
             <Link href={i.link} className="l-1125 text-text232">
               {i.label}
             </Link>
-            <div
-              className={`underlineLink absolute bottom-0 bg-orange h-[5px]`}
-            ></div>
           </div>
         ))}
       </div>
